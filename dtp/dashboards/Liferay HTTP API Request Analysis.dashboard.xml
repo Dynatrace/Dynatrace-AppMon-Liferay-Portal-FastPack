@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
 <!-- Manual changes can cause severe problems and system instability -->
-<!-- Apply manual changes only if you have received explicit instructions from dynaTrace Support -->
-<dynatrace version="6.1.0.7880" date="2/24/15 9:34 AM">
-  <dashboardconfig memento.version="6.1.0.7880" suppresssavewarning="false" created="2015-02-24T09:33:59-0700" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" modifiedbyname="dmabxw0" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="0000014b-bc70-20c0-bda3-cd95faf7e156" locationassource="false" localizationenabled="true" name="Liferay HTTP API Request Analysis" authorname="dmabxw0" modified="2015-02-24T09:34:00-0700" id="f6c5e259-26ee-46ce-b540-7f9d9c888fd5">
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<dynatrace version="6.3.8.1016" date="9/6/16 1:37 PM">
+  <dashboardconfig memento.version="6.3.8.1016" suppresssavewarning="false" created="2016-09-06T13:37:41-0600" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" modifiedbyname="dmabxw0" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="00000157-0101-9358-9ee0-2c50ad442fc3" locationassource="false" localizationenabled="true" name="Liferay HTTP API Request Analysis" authorname="dmabxw0" modified="2016-09-06T13:37:43-0600" id="ffb590c1-1f90-48c0-a156-30995bb88f9c">
     <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
     <filter>
       <criterion type="admfilteranalyzer" />
@@ -25,6 +25,7 @@
       </criterion>
       <criterion type="btm" />
       <criterion type="casuemdimension" />
+      <criterion type="dbdetails" />
       <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
       <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
       <criterion mode="all" type="hosts" completepurepath="true" />
@@ -32,10 +33,11 @@
       <criterion type="or" />
       <criterion mode="all" enduser="false" type="purepaths" />
       <criterion contenttypegroupsmode="all" showrendering="true" javascripttriggersmode="all" isactive="false" shownetwork="true" requestcriterion="ALL" type="riapurepathtype" showjavascript="true" />
-      <criterion includemeasurename="true" includetestname="true" teststatus="OK" type="tests" />
+      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,LOAD,WEB_API" />
+      <criterion includeplatform="true" type="testsoverview" />
       <criterion type="threads" enabled="false" filterbyid="false" />
       <criterion type="timeframe">
-        <timeframe type="Last 30min" />
+        <timeframe type="Last 15min" />
       </criterion>
       <criterion type="visits">
         <visitidset />
@@ -59,23 +61,23 @@
       <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="05c44096-f155-47b9-986d-924aded87063" folderid="org.eclipse.ui.internal.ViewStack@754c01" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
         <designconfig namefontsize="16" descriptionshow="true" headertype="HEADLESS" namefontcolor="72,72,72" nameshow="true" descriptionfontstyle="BOLD" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="80de7639-4e0a-4043-846a-0afce5244331" folderid="org.eclipse.ui.internal.ViewStack@18a85f6" relatedfolderid="org.eclipse.ui.internal.ViewStack@754c01" ratio="0.24559586">
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="80de7639-4e0a-4043-846a-0afce5244331" folderid="org.eclipse.ui.internal.ViewStack@18a85f6" relatedfolderid="org.eclipse.ui.internal.ViewStack@754c01" ratio="0.24522293">
         <designconfig namefontsize="16" descriptionshow="true" headertype="CUSTOM" namefontcolor="72,72,72" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="bf15f49c-c2e3-466f-889c-a349ffed4c47" folderid="folder" relatedfolderid="org.eclipse.ui.internal.ViewStack@18a85f6" ratio="0.097527474">
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="bf15f49c-c2e3-466f-889c-a349ffed4c47" folderid="folder" relatedfolderid="org.eclipse.ui.internal.ViewStack@18a85f6" ratio="0.09704641">
         <designconfig namefontsize="16" descriptionshow="true" headertype="HEADLESS" namefontcolor="87,87,87" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="1ae44c4c-b3b4-4f13-af86-da1273a3bde1, 929208a5-af22-4d6e-8472-67379fb51ef0, 17650238-ea43-47d4-9417-0344ebc11c8c, 43e875db-c75b-4a53-8ab8-66d91913b567, 69294f95-1d43-49d0-9677-be0ec6e89baf" folderid="org.eclipse.ui.internal.ViewStack@1dc84bc" relatedfolderid="folder" ratio="0.38203958">
+      <portletfolder selectionindex="4" relationtype="BOTTOM" portletconfigorder="1ae44c4c-b3b4-4f13-af86-da1273a3bde1, 929208a5-af22-4d6e-8472-67379fb51ef0, 17650238-ea43-47d4-9417-0344ebc11c8c, 43e875db-c75b-4a53-8ab8-66d91913b567, 69294f95-1d43-49d0-9677-be0ec6e89baf" folderid="org.eclipse.ui.internal.ViewStack@1dc84bc" relatedfolderid="folder" ratio="0.38161993">
         <designconfig namefontsize="10" descriptionshow="true" headertype="DEFAULT" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="2822375c-1fc0-4f5f-90e3-92b06309c7c3" folderid="org.eclipse.ui.internal.ViewStack@ec6bb3" relatedfolderid="folder" ratio="0.5542092">
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="2822375c-1fc0-4f5f-90e3-92b06309c7c3" folderid="org.eclipse.ui.internal.ViewStack@ec6bb3" relatedfolderid="folder" ratio="0.5538253">
         <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="4ffeef95-4c18-4e41-aa82-5be7e2f2092c" folderid="org.eclipse.ui.internal.ViewStack@c5fcee" relatedfolderid="org.eclipse.ui.internal.ViewStack@ec6bb3" ratio="0.50199205">
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="4ffeef95-4c18-4e41-aa82-5be7e2f2092c" folderid="org.eclipse.ui.internal.ViewStack@c5fcee" relatedfolderid="org.eclipse.ui.internal.ViewStack@ec6bb3" ratio="0.4979592">
         <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
     </dashboardlayout>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" description="This dashboard gives you a performance overview of every HTTP API request. &#xA;Select a HTTP API Request, analyze response time and load distribution in the charts and identify root cause of performance and scalability problems in the diagnostics charts." heightmode="AdjustToFontSize" locationascomparesource="false" source="server://dynatrace" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@18a85f6" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="false" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" name="" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="80de7639-4e0a-4043-846a-0afce5244331">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" description="This dashboard gives you a performance overview of every HTTP API request. &#xA;Select a HTTP API Request, analyze response time and load distribution in the charts and identify root cause of performance and scalability problems in the diagnostics charts." heightmode="AdjustToFontSize" locationascomparesource="false" source="server://dtliferay7" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@18a85f6" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="false" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" name="" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="80de7639-4e0a-4043-846a-0afce5244331">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="13" enabled="true" levels.per.tree="10" />
       <filter>
         <inheritancemap />
@@ -84,26 +86,27 @@
       <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
       <font name="Arial" style="NORMAL" height="1" />
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@1dc84bc" locationassource="false" addfilterinfo="false" name="Response Time Hotspots" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.Hotspots" id="929208a5-af22-4d6e-8472-67379fb51ef0" displaymode="Base">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@1dc84bc" locationassource="false" addfilterinfo="false" name="Response Time Hotspots" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.Hotspots" id="929208a5-af22-4d6e-8472-67379fb51ef0" displaymode="Base">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="5" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
           <textpattern name="agentname" type="contains" enabled="true" />
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
         <criterion type="and" />
         <criterion mode="all" excludeexternalsubpaths="false" type="api" />
         <criterion mode="all" type="applications" />
         <criterion type="btm" />
         <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
         <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
         <criterion mode="all" type="hosts" completepurepath="true" />
-        <criterion usefullanalysis="false" active="false" type="noanalysiscache" />
         <criterion type="or" />
         <criterion mode="all" enduser="false" type="purepaths" />
         <criterion type="threads" enabled="false" filterbyid="false" />
         <criterion type="timeframe">
-          <timeframe type="Last 30min" />
+          <timeframe type="Last 15min" />
         </criterion>
         <criterion type="visits">
           <visitidset />
@@ -128,26 +131,27 @@
       <masterreference portletid="bf15f49c-c2e3-466f-889c-a349ffed4c47" />
       <analyzerparameters percentile="4" analyzerrecordlimit="-1" requiredrilldowndata="true" />
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="folder" locationassource="false" addfilterinfo="false" name="Business Transaction" ismaster="true" typeid="com.dynatrace.diagnostics.portlets.transaction.Transaction" id="bf15f49c-c2e3-466f-889c-a349ffed4c47" displaymode="Base">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="folder" locationassource="false" addfilterinfo="false" name="Business Transaction" ismaster="true" typeid="com.dynatrace.diagnostics.portlets.transaction.Transaction" id="bf15f49c-c2e3-466f-889c-a349ffed4c47" displaymode="Base">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
           <textpattern name="agentname" type="contains" enabled="true" />
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
         <criterion type="and" />
         <criterion mode="all" excludeexternalsubpaths="false" type="api" />
         <criterion mode="all" type="applications" />
         <criterion type="btm" />
         <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
         <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
         <criterion mode="all" type="hosts" completepurepath="true" />
-        <criterion usefullanalysis="false" active="false" type="noanalysiscache" />
         <criterion type="or" />
         <criterion mode="all" enduser="false" type="purepaths" />
         <criterion type="threads" enabled="false" filterbyid="false" />
         <criterion type="timeframe">
-          <timeframe type="Last 30min" />
+          <timeframe type="Last 15min" />
         </criterion>
         <criterion customdefaultcolumnindex="0" columnlabel="" columnindex="0" isactive="false" sort="highestValues" type="topx" maxnrofrecords="10" customdefaultcolumnlabel="" />
         <criterion type="visits">
@@ -206,14 +210,14 @@
         </table>
       </datamodelconfig>
       <analyzerparameters analyzerrecordlimit="10000" requiredrilldowndata="true" context="SERVER" transaction="Liferay HTTP API Request" />
-      <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="true" logxaxis="false" title="Count" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="false" charttype="PieChart" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="true" showlegend="true" lockyaxis="true" showlabels="true">
+      <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="true" logxaxis="false" title="Count" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="false" charttype="PieChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="true" showlegend="true" lockyaxis="true" showlabels="true">
         <legendcomposition measure="true">
           <pielabelcomposition unit="true" measure="true" value="true" />
         </legendcomposition>
         <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
       </chart>
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" description="${context}" heightmode="UseBackgroundImageHeight" locationascomparesource="false" source="server://dynatrace" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="HTTP API Request Performance" folderid="org.eclipse.ui.internal.ViewStack@754c01" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="CENTER" locationassource="false" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" name="CMS Page Performance" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="05c44096-f155-47b9-986d-924aded87063">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" description="${context}" heightmode="UseBackgroundImageHeight" locationascomparesource="false" source="server://dtliferay7" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="HTTP API Request Performance" folderid="org.eclipse.ui.internal.ViewStack@754c01" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="CENTER" locationassource="false" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" name="CMS Page Performance" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="05c44096-f155-47b9-986d-924aded87063">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="10" enabled="true" levels.per.tree="10" />
       <filter>
         <inheritancemap />
@@ -225,28 +229,29 @@
         <chunk offset="0" data="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" />
       </image>
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@1dc84bc" locationassource="false" addfilterinfo="false" name="Database" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.database.Database" id="17650238-ea43-47d4-9417-0344ebc11c8c" displaymode="Base">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@1dc84bc" locationassource="false" addfilterinfo="false" name="Database" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.database.Database" id="17650238-ea43-47d4-9417-0344ebc11c8c" displaymode="Base">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="7" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
           <textpattern name="agentname" type="contains" enabled="true" />
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
         <criterion type="and" />
         <criterion mode="all" excludeexternalsubpaths="false" type="api" />
         <criterion mode="all" type="applications" />
         <criterion showrendering="true" isactive="true" shownetwork="true" type="browserpathtype" showjavascript="true" />
         <criterion type="btm" />
         <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
         <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
         <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
         <criterion mode="all" type="hosts" completepurepath="true" />
-        <criterion usefullanalysis="false" active="false" type="noanalysiscache" />
         <criterion type="or" />
         <criterion mode="all" enduser="false" type="purepaths" />
         <criterion type="threads" enabled="false" filterbyid="false" />
         <criterion type="timeframe">
-          <timeframe type="Last 30min" />
+          <timeframe type="Last 15min" />
         </criterion>
         <criterion customdefaultcolumnindex="0" columnlabel="" columnindex="0" isactive="false" sort="highestValues" type="topx" maxnrofrecords="10" customdefaultcolumnlabel="" />
         <criterion type="visits">
@@ -398,28 +403,29 @@
         <keysmap />
       </analyzerparameters>
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" showlatency="false" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" source="server://dynatrace" sessionid="Liferay" folderid="org.eclipse.ui.internal.ViewStack@1dc84bc" addfilterinfo="false" autozoom="true" yscrollpos="0" ismaster="false" typeid="com.dynatrace.diagnostics.adm.ADM" viewmode="Topology" id="1ae44c4c-b3b4-4f13-af86-da1273a3bde1" displaymode="Base" zoomlevel="0.4" usespecificautorefresh="false" showentrypoints="true" sessiontype="live" locationascomparesource="false" usedashboardsource="true" locationassource="false" showlegend="true" name="Transaction Flow" xscrollpos="0" showdatabase="true">
+    <portletconfig usedashboardsourceforcompare="true" showlatency="false" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" source="server://dtliferay7" sessionid="Liferay" folderid="org.eclipse.ui.internal.ViewStack@1dc84bc" addfilterinfo="false" autozoom="true" yscrollpos="0" ismaster="false" typeid="com.dynatrace.diagnostics.adm.ADM" viewmode="Topology" id="1ae44c4c-b3b4-4f13-af86-da1273a3bde1" displaymode="Base" zoomlevel="0.4" usespecificautorefresh="false" showentrypoints="true" sessiontype="live" locationascomparesource="false" usedashboardsource="true" locationassource="false" showlegend="true" name="Transaction Flow" xscrollpos="0" showdatabase="true">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="9" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
           <textpattern name="agentname" type="contains" enabled="true" />
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
         <criterion type="and" />
         <criterion mode="all" excludeexternalsubpaths="false" type="api" />
         <criterion mode="all" type="applications" />
         <criterion showrendering="true" isactive="true" shownetwork="true" type="browserpathtype" showjavascript="true" />
         <criterion type="btm" />
         <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
         <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
         <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
         <criterion mode="all" type="hosts" completepurepath="true" />
-        <criterion usefullanalysis="false" active="false" type="noanalysiscache" />
         <criterion type="or" />
         <criterion mode="all" enduser="false" type="purepaths" />
         <criterion type="threads" enabled="false" filterbyid="false" />
         <criterion type="timeframe">
-          <timeframe type="Last 30min" />
+          <timeframe type="Last 15min" />
         </criterion>
         <criterion type="visits">
           <visitidset />
@@ -502,14 +508,18 @@
         <expandgroup expandstate="Auto" agentgroupid="Domainless&lt;#|*:?&gt;type:0" />
         <expandgroup expandstate="Auto" agentgroupid="ExternalConfluence" />
         <expandgroup expandstate="Auto" agentgroupid="ExternalJira" />
+        <expandgroup expandstate="Expanded" agentgroupid="HSQLDB|type:0" />
         <expandgroup expandstate="Auto" agentgroupid="InternalConfluence" />
         <expandgroup expandstate="Auto" agentgroupid="InternalJira" />
+        <expandgroup expandstate="Expanded" agentgroupid="Liferay_Tomcat|type:1" />
+        <expandgroup expandstate="Expanded" agentgroupid="Liferay_WebServer|type:16" />
         <expandgroup expandstate="Auto" agentgroupid="Mobile Application" />
         <expandgroup expandstate="Expanded" agentgroupid="MySQL|type:0" />
         <expandgroup expandstate="Auto" agentgroupid="Payment Backend (.NET)" />
         <expandgroup expandstate="Auto" agentgroupid="SQL Server" />
         <expandgroup expandstate="Auto" agentgroupid="SQL Server CE" />
         <expandgroup expandstate="Auto" agentgroupid="Secretserver" />
+        <expandgroup expandstate="Expanded" agentgroupid="Synthetic|type:8" />
         <expandgroup expandstate="Expanded" agentgroupid="Third Party Content|type:0" />
         <expandgroup expandstate="Expanded" agentgroupid="Tomcat|type:1" />
         <expandgroup expandstate="Auto" agentgroupid="Webrequests" />
@@ -524,7 +534,7 @@
         <expandgroup expandstate="Auto" agentgroupid="us.downloads" />
       </expandstates>
     </portletconfig>
-    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@ec6bb3" locationassource="false" addfilterinfo="false" name="Load vs. Response Time" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="2822375c-1fc0-4f5f-90e3-92b06309c7c3">
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@ec6bb3" locationassource="false" addfilterinfo="false" name="Load vs. Response Time" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="2822375c-1fc0-4f5f-90e3-92b06309c7c3">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="11" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
@@ -535,7 +545,7 @@
         <criterion type="btm" />
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
-          <timeframe type="Last 30min" />
+          <timeframe type="Last 15min" />
         </criterion>
         <criterion type="visits">
           <visitidset />
@@ -545,7 +555,7 @@
       <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
       <sashconfig displayoption="CHART" weights="500,500" />
       <datamodelconfig>
-        <chart axis.x.title="Load" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="1min" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedBarChart" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="Requests/min" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+        <chart axis.x.title="Load" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="1min" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedBarChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="Requests/min" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
           <legendcomposition agent="true" measure="true" host="true" splittings="true">
             <pielabelcomposition unit="true" value="true" />
           </legendcomposition>
@@ -1073,26 +1083,27 @@
       <masterreference portletid="bf15f49c-c2e3-466f-889c-a349ffed4c47" />
       <chartcolors />
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" exceptionexpanded="true" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" source="server://dynatrace" sessionid="Liferay" folderid="org.eclipse.ui.internal.ViewStack@1dc84bc" addfilterinfo="false" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.ErrorDetection" id="43e875db-c75b-4a53-8ab8-66d91913b567" displaymode="Base" browserexpanded="true" usespecificautorefresh="false" sessiontype="live" locationascomparesource="false" usedashboardsource="true" httpexpanded="true" locationassource="false" phpexpanded="true" name="Errors" logexpanded="true" moileexpanded="true">
+    <portletconfig usedashboardsourceforcompare="true" exceptionexpanded="true" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" source="server://dtliferay7" sessionid="Liferay" folderid="org.eclipse.ui.internal.ViewStack@1dc84bc" addfilterinfo="false" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.ErrorDetection" id="43e875db-c75b-4a53-8ab8-66d91913b567" displaymode="Base" browserexpanded="true" usespecificautorefresh="false" sessiontype="live" locationascomparesource="false" usedashboardsource="true" httpexpanded="true" locationassource="false" phpexpanded="true" name="Errors" logexpanded="true" moileexpanded="true">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="10" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
           <textpattern name="agentname" type="contains" enabled="true" />
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
         <criterion type="and" />
         <criterion mode="all" excludeexternalsubpaths="false" type="api" />
         <criterion mode="all" type="applications" />
         <criterion type="btm" />
         <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
         <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
         <criterion mode="all" type="hosts" completepurepath="true" />
-        <criterion usefullanalysis="false" active="false" type="noanalysiscache" />
         <criterion type="or" />
         <criterion mode="all" enduser="false" type="purepaths" />
         <criterion type="threads" enabled="false" filterbyid="false" />
         <criterion type="timeframe">
-          <timeframe type="Last 30min" />
+          <timeframe type="Last 15min" />
         </criterion>
         <criterion type="visits">
           <visitidset />
@@ -1144,7 +1155,7 @@
       <masterreference portletid="bf15f49c-c2e3-466f-889c-a349ffed4c47" />
       <analyzerparameters analyzerrecordlimit="1000" requiredrilldowndata="true" />
     </portletconfig>
-    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@c5fcee" locationassource="false" addfilterinfo="false" name="Response Time" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="4ffeef95-4c18-4e41-aa82-5be7e2f2092c">
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default.gif" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@c5fcee" locationassource="false" addfilterinfo="false" name="Response Time" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="4ffeef95-4c18-4e41-aa82-5be7e2f2092c">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="12" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
@@ -1155,7 +1166,7 @@
         <criterion type="btm" />
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
-          <timeframe type="Last 30min" />
+          <timeframe type="Last 15min" />
         </criterion>
         <criterion type="visits">
           <visitidset />
@@ -1165,7 +1176,7 @@
       <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
       <sashconfig displayoption="CHART" weights="500,500" />
       <datamodelconfig>
-        <chart axis.x.title="Response Time" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="1min" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="AreaChart" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="ms" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+        <chart axis.x.title="Response Time" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="1min" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="AreaChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="ms" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
           <legendcomposition agent="true" measure="true" host="true" splittings="true">
             <pielabelcomposition unit="true" value="true" />
           </legendcomposition>
@@ -1207,26 +1218,27 @@
       <masterreference portletid="bf15f49c-c2e3-466f-889c-a349ffed4c47" />
       <chartcolors />
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@1dc84bc" locationassource="false" addfilterinfo="false" name="Web Requests" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.webrequest.WebRequest" id="69294f95-1d43-49d0-9677-be0ec6e89baf" displaymode="Base">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@1dc84bc" locationassource="false" addfilterinfo="false" name="Web Requests" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.webrequest.WebRequest" id="69294f95-1d43-49d0-9677-be0ec6e89baf" displaymode="Base">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="14" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
           <textpattern name="agentname" type="contains" enabled="true" />
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
         <criterion type="and" />
         <criterion mode="all" excludeexternalsubpaths="false" type="api" />
         <criterion mode="all" type="applications" />
         <criterion type="btm" />
         <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
         <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
         <criterion mode="all" type="hosts" completepurepath="true" />
-        <criterion usefullanalysis="false" active="false" type="noanalysiscache" />
         <criterion type="or" />
         <criterion mode="all" enduser="false" type="purepaths" />
         <criterion type="threads" enabled="false" filterbyid="false" />
         <criterion type="timeframe">
-          <timeframe type="Last 30min" />
+          <timeframe type="Last 15min" />
         </criterion>
         <criterion customdefaultcolumnindex="0" columnlabel="" columnindex="0" isactive="false" sort="highestValues" type="topx" maxnrofrecords="10" customdefaultcolumnlabel="" />
         <criterion type="visits">
@@ -1292,4 +1304,3 @@
     </portletconfig>
   </dashboardconfig>
 </dynatrace>
-

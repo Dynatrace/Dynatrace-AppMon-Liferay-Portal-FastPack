@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
 <!-- Manual changes can cause severe problems and system instability -->
-<!-- Apply manual changes only if you have received explicit instructions from dynaTrace Support -->
-<dynatrace version="6.1.0.7880" date="2/24/15 9:34 AM">
-  <dashboardconfig memento.version="6.1.0.7880" suppresssavewarning="false" created="2015-02-24T09:34:31-0700" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="dmabxw0" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="0000014b-bc70-99d8-865f-00ef286eba85" locationassource="false" localizationenabled="false" name="Liferay Documents and Media Overview" authorname="dmabxw0" modified="2015-02-24T09:34:31-0700" id="01c7c2f1-d2d8-4a6d-afeb-8ec3edc092ec">
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<dynatrace version="6.3.8.1016" date="9/6/16 1:26 PM">
+  <dashboardconfig memento.version="6.3.8.1016" suppresssavewarning="false" created="2016-09-06T13:25:59-0600" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="dmabxw0" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="00000157-00f6-e8e0-b840-9498692d053e" locationassource="false" localizationenabled="false" name="Liferay Documents and Media Overview" authorname="dmabxw0" modified="2016-09-06T13:26:04-0600" id="35a04df5-614c-4d45-93a2-d5875015e15c">
     <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
     <filter>
       <criterion type="admfilteranalyzer" />
@@ -23,8 +23,13 @@
           <stringmatchpattern match="contains" text="" />
         </pageurl>
       </criterion>
-      <criterion type="btm" />
+      <criterion type="btm">
+        <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - view rendered" />
+        <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - action processed" />
+        <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - resource served" />
+      </criterion>
       <criterion type="casuemdimension" />
+      <criterion type="dbdetails" />
       <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
       <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
       <criterion mode="all" type="hosts" completepurepath="true" />
@@ -32,7 +37,8 @@
       <criterion type="or" />
       <criterion mode="all" enduser="false" type="purepaths" />
       <criterion contenttypegroupsmode="all" showrendering="true" javascripttriggersmode="all" isactive="false" shownetwork="true" requestcriterion="ALL" type="riapurepathtype" showjavascript="true" />
-      <criterion includemeasurename="true" includetestname="true" teststatus="OK" type="tests" />
+      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,LOAD,WEB_API" />
+      <criterion includeplatform="true" type="testsoverview" />
       <criterion type="threads" enabled="false" filterbyid="false" />
       <criterion type="timeframe">
         <timeframe type="Last 24h" />
@@ -53,49 +59,46 @@
         </filterquerypattern>
       </criterion>
     </filter>
-    <autorefreshconfig unit="MINUTES" time="10" enabled="true" />
+    <autorefreshconfig unit="MINUTES" time="15" enabled="true" />
     <designconfig namefontsize="10" descriptionshow="true" headertype="DEFAULT" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" clienttheme="DEFAULT" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" autoadjustfontsizes="false" />
     <dashboardlayout>
       <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="7021a0ea-98f0-4440-87de-e70da2e85201" folderid="folder" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
         <designconfig namefontsize="10" descriptionshow="true" headertype="HEADLESS" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@3cdce7f9" relatedfolderid="folder" ratio="0.074611396" />
-      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="f57d48c4-5fcc-4c6e-ac45-20e15545c413" folderid="org.eclipse.ui.internal.ViewStack@7668f8fd" relatedfolderid="org.eclipse.ui.internal.ViewStack@3cdce7f9" ratio="0.063858695">
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@3cdce7f9" relatedfolderid="folder" ratio="0.072150074" />
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="f57d48c4-5fcc-4c6e-ac45-20e15545c413" folderid="org.eclipse.ui.internal.ViewStack@7668f8fd" relatedfolderid="org.eclipse.ui.internal.ViewStack@3cdce7f9" ratio="0.06315789">
         <designconfig namefontsize="14" descriptionshow="true" headertype="HEADLESS" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="148d6a76-ee66-4b21-ac42-94e0514afc51" folderid="org.eclipse.ui.internal.ViewStack@21d341c" relatedfolderid="org.eclipse.ui.internal.ViewStack@7668f8fd" ratio="0.387458">
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="148d6a76-ee66-4b21-ac42-94e0514afc51" folderid="org.eclipse.ui.internal.ViewStack@21d341c" relatedfolderid="org.eclipse.ui.internal.ViewStack@7668f8fd" ratio="0.38569206">
         <designconfig namefontsize="14" descriptionshow="true" headertype="HEADLESS" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="3e3acfb1-c26c-4ffc-b4c6-61777ea9c2ea" folderid="org.eclipse.ui.internal.ViewStack@3f52c6c6" relatedfolderid="org.eclipse.ui.internal.ViewStack@21d341c" ratio="0.49725777">
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="3e3acfb1-c26c-4ffc-b4c6-61777ea9c2ea" folderid="org.eclipse.ui.internal.ViewStack@3f52c6c6" relatedfolderid="org.eclipse.ui.internal.ViewStack@21d341c" ratio="0.49620253">
         <designconfig namefontsize="14" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="d4dc0e51-bee2-4024-a0b5-1e9f370fb89e" folderid="org.eclipse.ui.internal.ViewStack@23029358" relatedfolderid="org.eclipse.ui.internal.ViewStack@3f52c6c6" ratio="0.49796197">
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="d4dc0e51-bee2-4024-a0b5-1e9f370fb89e" folderid="org.eclipse.ui.internal.ViewStack@23029358" relatedfolderid="org.eclipse.ui.internal.ViewStack@3f52c6c6" ratio="0.49649122">
         <designconfig namefontsize="12" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="f03875f8-fd8e-450c-a7d4-ab111165255b" folderid="org.eclipse.ui.internal.ViewStack@531748bc" relatedfolderid="org.eclipse.ui.internal.ViewStack@23029358" ratio="0.66545457">
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="84b870d4-e1ba-4fad-a409-2ef9b2337afb" folderid="org.eclipse.ui.internal.ViewStack@10a9b67f" relatedfolderid="org.eclipse.ui.internal.ViewStack@23029358" ratio="0.4924623">
         <designconfig namefontsize="12" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="84b870d4-e1ba-4fad-a409-2ef9b2337afb" folderid="org.eclipse.ui.internal.ViewStack@10a9b67f" relatedfolderid="org.eclipse.ui.internal.ViewStack@23029358" ratio="0.49726775">
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@81c8369" relatedfolderid="org.eclipse.ui.internal.ViewStack@3f52c6c6" ratio="0.53266335" />
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="f47cadb6-6e70-41a7-87b0-f954085236d6" folderid="org.eclipse.ui.internal.ViewStack@652e3c0b" relatedfolderid="org.eclipse.ui.internal.ViewStack@81c8369" ratio="0.4516129">
         <designconfig namefontsize="12" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@81c8369" relatedfolderid="org.eclipse.ui.internal.ViewStack@3f52c6c6" ratio="0.5345455" />
-      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="f47cadb6-6e70-41a7-87b0-f954085236d6" folderid="org.eclipse.ui.internal.ViewStack@652e3c0b" relatedfolderid="org.eclipse.ui.internal.ViewStack@81c8369" ratio="0.4609375">
-        <designconfig namefontsize="12" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
-      </portletfolder>
-      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="cbcb0795-4482-46a7-b049-b3d5a5ab4abe" folderid="org.eclipse.ui.internal.ViewStack@5153e055" relatedfolderid="org.eclipse.ui.internal.ViewStack@7668f8fd" ratio="0.5">
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="cbcb0795-4482-46a7-b049-b3d5a5ab4abe" folderid="org.eclipse.ui.internal.ViewStack@5153e055" relatedfolderid="org.eclipse.ui.internal.ViewStack@7668f8fd" ratio="0.49596775">
         <designconfig namefontsize="14" descriptionshow="true" headertype="HEADLESS" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="d6795156-7359-4ae8-84d3-6747093317cb" folderid="org.eclipse.ui.internal.ViewStack@5478597" relatedfolderid="folder" ratio="0.4504076">
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="d6795156-7359-4ae8-84d3-6747093317cb" folderid="org.eclipse.ui.internal.ViewStack@5478597" relatedfolderid="folder" ratio="0.45">
         <designconfig namefontsize="14" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="45d34bfc-a414-4ade-835e-921712052dc1" folderid="org.eclipse.ui.internal.ViewStack@322593ed" relatedfolderid="org.eclipse.ui.internal.ViewStack@5478597" ratio="0.33621755">
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="45d34bfc-a414-4ade-835e-921712052dc1" folderid="org.eclipse.ui.internal.ViewStack@322593ed" relatedfolderid="org.eclipse.ui.internal.ViewStack@5478597" ratio="0.33333334">
         <designconfig namefontsize="12" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="9b0f2d5e-af9c-4c04-9abf-9d6c7abee2f7" folderid="org.eclipse.ui.internal.ViewStack@c76762" relatedfolderid="org.eclipse.ui.internal.ViewStack@322593ed" ratio="0.49720672">
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="9b0f2d5e-af9c-4c04-9abf-9d6c7abee2f7" folderid="org.eclipse.ui.internal.ViewStack@c76762" relatedfolderid="org.eclipse.ui.internal.ViewStack@322593ed" ratio="0.4952153">
         <designconfig namefontsize="12" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
     </dashboardlayout>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@10a9b67f" rightaxistimeframeoffsetunit="MILLISECONDS" locationassource="false" addfilterinfo="false" rightaxistimeframeoffset="0" name="Documents &amp; Media Basic View Rendered" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.DualAxisChart" id="84b870d4-e1ba-4fad-a409-2ef9b2337afb">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@10a9b67f" rightaxistimeframeoffsetunit="MILLISECONDS" locationassource="false" addfilterinfo="false" rightaxistimeframeoffset="0" name="Documents &amp; Media View Rendered" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.DualAxisChart" id="84b870d4-e1ba-4fad-a409-2ef9b2337afb">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="11" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
@@ -103,7 +106,9 @@
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
         <criterion mode="all" type="applications" />
-        <criterion type="btm" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - view rendered" />
+        </criterion>
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
           <timeframe type="Last 24h" />
@@ -111,21 +116,20 @@
         <criterion type="visits">
           <visitidset />
         </criterion>
-        <inheritancemap />
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="btm" />
+        </inheritancemap>
       </filter>
       <autorefreshconfig unit="MINUTES" time="10" enabled="true" />
       <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
       <datamodelconfig axisboundsmode="AUTO" rightaxisdatascale="1.0" leftaxisdatascale="1.0" axisdrawingorder="RIGHT">
-        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="StepChart" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="LineChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
           <legendcomposition agent="true" measure="true" host="true" splittings="true">
             <pielabelcomposition unit="true" value="true" />
           </legendcomposition>
-          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="8fcfd0de-1e11-4e58-8861-97599bd219d1" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
-            <tagtolabel>
-              <taglabelentry value="Documents and Media Render Request - basic Struts Paths" key="BTSP1" />
-            </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
-            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic view rendered" measurerate="purepath" />
+          <chartsource systemid="Liferay" sourcecolor="RGB(11,23,76,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="2b4cbdf3-3b69-45c2-92f2-80ce793c5bd0" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="false" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - view rendered" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="ms">
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - view rendered" measurerate="purepath" />
           </chartsource>
           <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
         </chart>
@@ -151,25 +155,17 @@
           <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
           <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
         </table>
-        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="ClusteredBarChart" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="Count" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedBarChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="Count" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
           <legendcomposition agent="true" measure="true" host="true" splittings="true">
             <pielabelcomposition unit="true" value="true" />
           </legendcomposition>
-          <chartsource systemid="Liferay" sourcecolor="RGB(23,13,89,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="Liferay" parentid="3d7baf3a-d8fa-4646-98f9-a15f95160c03" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="b3ec1253-d4b0-39fd-b703-3a22bf9951a4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Portlet - Documents and Media - basic view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
-            <tagtolabel>
-              <taglabelentry value="Documents and Media Render Request - basic Struts Paths" key="BTSP1" />
-            </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic view rendered" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Portlet - Documents and Media - basic view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
-              <tag type="0" value="/document_library/view" key="BTSP1" />
-            </lightweightuniquemeasureidentifier>
-            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic view rendered" measurerate="purepath" />
+          <chartsource systemid="Liferay" sourcecolor="RGB(123,179,224,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="random" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="bcb1fa4d-c17c-46dd-a403-8c7f9a0e3519" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="false" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - view rendered" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="ms">
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - view rendered" measurerate="purepath" />
           </chartsource>
-          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="3d7baf3a-d8fa-4646-98f9-a15f95160c03" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
-            <tagtolabel>
-              <taglabelentry value="Documents and Media Render Request - basic Struts Paths" key="BTSP1" />
-            </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
-            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic view rendered" measurerate="purepath" />
+          <chartsource systemid="Liferay" sourcecolor="RGB(205,25,25,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="440c1eb0-0ba8-4242-b735-c7dbf53743aa" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="false" autoscale="false" measuretype="ErrorDetectionMeasure" fetchbaseline="false" unit="number" name="Failed Transaction Count of Portlet - Documents and Media - view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="2" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Failed Transaction Count of Portlet - Documents and Media - view rendered" agentname="" metricsimpledisplayname="Failed Transaction Count" agenthost="" metrickeyid="Failed Transaction Count" keyid="Failed Transaction Count of Portlet - Documents and Media - view rendered" metricgroupkey="Error Detection" collector="" measuretype="ErrorDetectionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
           </chartsource>
           <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
         </chart>
@@ -201,14 +197,18 @@
       </datamodelconfig>
       <ccontent enabled="first" ratio="0.5" />
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@c76762" locationassource="false" addfilterinfo="false" name="Host Health" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Incident" id="9b0f2d5e-af9c-4c04-9abf-9d6c7abee2f7">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@c76762" locationassource="false" addfilterinfo="false" name="Host Health" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Incident" id="9b0f2d5e-af9c-4c04-9abf-9d6c7abee2f7">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="7" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
           <textpattern name="agentname" type="contains" enabled="true" />
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
-        <criterion type="btm" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - view rendered" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - action processed" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - resource served" />
+        </criterion>
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
           <timeframe type="Last 24h" />
@@ -228,16 +228,16 @@
           <column forcevisible="false" hidden="true" width="120" index="6" sort="None" />
           <column forcevisible="false" hidden="true" width="120" index="7" sort="None" />
         </table>
-        <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="IncidentTrafficLight" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+        <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="IncidentTrafficLight" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
           <legendcomposition measure="true" splittings="true">
             <pielabelcomposition unit="true" measure="true" value="true" />
           </legendcomposition>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Host CPU Unhealthy" overridesource="false" sourcetype="INCIDENT_RULE" id="9e1f360e-ca5a-4e1a-9126-4388f84f58a6" position="2" displayrate="10s">
-            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" flags="1" description="The Host has had a high CPU usage for a sustained period of time." id="Host CPU Unhealthy">
+            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" visible="true" flags="1" description="The Host has had a high CPU usage for a sustained period of time." id="Host CPU Unhealthy">
               <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
               <actions>
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.logging" smartalert="false" rolekey="com.dynatrace.diagnostics.logging" roletype="1" type="Logging Notification" key="com.dynatrace.diagnostics.logging" bundleversion="0.0.0" />
-                <actionref severity="informational" execution="begin" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" smartalert="false" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" type="Email Notification" key="com.dynatrace.diagnostics.plugins.EmailNotification" bundleversion="0.0.0">
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+                <actionref severity="informational" execution="begin" smartalert="false" type="Email Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.plugins.EmailNotification">
                   <property typeid="string" value="" key="from" />
                   <property typeid="string" value="group[Incident Email Group]" key="to" />
                   <property typeid="string" value="" key="cc" />
@@ -248,11 +248,11 @@
             </incidentrule>
           </chartsource>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Host Disk Unhealthy" overridesource="false" sourcetype="INCIDENT_RULE" id="ec4d909c-af96-44d5-8065-8e51b1efd60b" position="1" displayrate="10s">
-            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" flags="1" description="The Host has at least one disk with little space available." id="Host Disk Unhealthy">
+            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" visible="true" flags="1" description="The Host has at least one disk with little space available." id="Host Disk Unhealthy">
               <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
               <actions>
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.logging" smartalert="false" rolekey="com.dynatrace.diagnostics.logging" roletype="1" type="Logging Notification" key="com.dynatrace.diagnostics.logging" bundleversion="0.0.0" />
-                <actionref severity="informational" execution="begin" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" smartalert="false" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" type="Email Notification" key="com.dynatrace.diagnostics.plugins.EmailNotification" bundleversion="0.0.0">
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+                <actionref severity="informational" execution="begin" smartalert="false" type="Email Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.plugins.EmailNotification">
                   <property typeid="string" value="" key="from" />
                   <property typeid="string" value="group[Incident Email Group]" key="to" />
                   <property typeid="string" value="" key="cc" />
@@ -263,11 +263,11 @@
             </incidentrule>
           </chartsource>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Host Network Unhealthy" overridesource="false" sourcetype="INCIDENT_RULE" id="0de03b8c-e3e5-4211-a685-3a1c56614f6d" position="3" displayrate="10s">
-            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" flags="1" description="The Host has had at least one network interface with high bandwidth usage for a sustained period of time." id="Host Network Unhealthy">
+            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" visible="true" flags="1" description="The Host has had at least one network interface with high bandwidth usage for a sustained period of time." id="Host Network Unhealthy">
               <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
               <actions>
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.logging" smartalert="false" rolekey="com.dynatrace.diagnostics.logging" roletype="1" type="Logging Notification" key="com.dynatrace.diagnostics.logging" bundleversion="0.0.0" />
-                <actionref severity="informational" execution="begin" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" smartalert="false" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" type="Email Notification" key="com.dynatrace.diagnostics.plugins.EmailNotification" bundleversion="0.0.0">
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+                <actionref severity="informational" execution="begin" smartalert="false" type="Email Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.plugins.EmailNotification">
                   <property typeid="string" value="" key="from" />
                   <property typeid="string" value="group[Incident Email Group]" key="to" />
                   <property typeid="string" value="" key="cc" />
@@ -278,11 +278,11 @@
             </incidentrule>
           </chartsource>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Host Memory Unhealthy" overridesource="false" sourcetype="INCIDENT_RULE" id="18624054-cbc6-49e1-9ef0-c32241b21a1c" position="4" displayrate="10s">
-            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" flags="1" description="The Host has had memory with little space available or considerable amount of page faults for a sustained period of time." id="Host Memory Unhealthy">
+            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" visible="true" flags="1" description="The Host has had memory with little space available or considerable amount of page faults for a sustained period of time." id="Host Memory Unhealthy">
               <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
               <actions>
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.logging" smartalert="false" rolekey="com.dynatrace.diagnostics.logging" roletype="1" type="Logging Notification" key="com.dynatrace.diagnostics.logging" bundleversion="0.0.0" />
-                <actionref severity="informational" execution="begin" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" smartalert="false" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" type="Email Notification" key="com.dynatrace.diagnostics.plugins.EmailNotification" bundleversion="0.0.0">
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+                <actionref severity="informational" execution="begin" smartalert="false" type="Email Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.plugins.EmailNotification">
                   <property typeid="string" value="" key="from" />
                   <property typeid="string" value="group[Incident Email Group]" key="to" />
                   <property typeid="string" value="" key="cc" />
@@ -296,7 +296,7 @@
         </chart>
       </datamodelconfig>
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@5153e055" locationassource="false" addfilterinfo="false" name="Business Transaction Hotspots" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.BtHistoricalCompare" id="cbcb0795-4482-46a7-b049-b3d5a5ab4abe" treestructuremode="Hierarchy">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@5153e055" locationassource="false" addfilterinfo="false" name="Business Transaction Hotspots" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.BtHistoricalCompare" id="cbcb0795-4482-46a7-b049-b3d5a5ab4abe" treestructuremode="Hierarchy">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="10" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
@@ -304,7 +304,11 @@
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
         <criterion mode="all" type="applications" />
-        <criterion type="btm" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - view rendered" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - action processed" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - resource served" />
+        </criterion>
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
           <timeframe type="Today" />
@@ -313,32 +317,32 @@
           <inheritanceentry inherited="false" type="timeframe" />
         </inheritancemap>
       </filter>
-      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <autorefreshconfig unit="MINUTES" time="10" enabled="true" />
       <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
       <datamodelconfig sortcolumn="0" columnorder="0,1,2,12,4,13,6,7,9,5,8,11,10,3" sorttable="0" sortorder="Up">
         <chartsourceconfigurations>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Tags all PurePaths containing Web Request which processed an action (JSR 286) for an instance of Documents and Media portlet. Splits on Struts Path which was handling the action for this portlet." overridesource="false" sourcetype="BUSINESS_TRANSACTION" id="a4fe97fb-f27c-43fd-aa65-64421b982f15" position="1" displayrate="10s">
-            <businesstransaction groupingconstant1="BTSP1" transactionconfigkeyid="Portlet - Documents and Media - basic action processed" parentconfigurationid="825ee99b-83fd-473d-924a-b27719534dd1">
-              <sessionreference systemid="Liferay" datastarttime="0" techtypes="0" latestmodification="0" lastmodifiedby="" type="live" />
+            <businesstransaction groupingconstant1="BTSP1" transactionconfigkeyid="Portlet - Documents and Media - action processed" parentconfigurationid="825ee99b-83fd-473d-924a-b27719534dd1">
+              <sessionreference systemid="Liferay" datastarttime="1468266495094" techtypes="17" latestmodification="1470688676000" lastmodifiedby="admin" type="live" />
               <childsourceconfigs>
-                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="f35d48e7-bad7-4caa-9fc8-5ecff535f9a9" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
-                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic action processed" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="f35d48e7-bad7-4caa-9fc8-5ecff535f9a9" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - action processed" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="95" id="e55c67e5-7660-4683-b070-f1f66b77eef6" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
-                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic action processed" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="95" id="e55c67e5-7660-4683-b070-f1f66b77eef6" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - action processed" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="c710249e-e61a-49bc-83e0-c6ff965f4f68" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
-                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic action processed" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="c710249e-e61a-49bc-83e0-c6ff965f4f68" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - action processed" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
               </childsourceconfigs>
             </businesstransaction>
           </chartsource>
-          <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Tags all PurePaths containing Web Request which rendered an instance of Documents and Media Display portlet. Splits on Struts Path which was rendered for this portlet." overridesource="false" sourcetype="BUSINESS_TRANSACTION" id="2a86e262-5851-44f7-9a10-bf07d397e2f2" position="4" displayrate="10s">
+          <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Portlet - Documents and Media Display - basic view rendered" overridesource="false" sourcetype="BUSINESS_TRANSACTION" id="2a86e262-5851-44f7-9a10-bf07d397e2f2" position="3" displayrate="10s">
             <businesstransaction groupingconstant1="BTSP1" transactionconfigkeyid="Portlet - Documents and Media Display - basic view rendered" parentconfigurationid="d4a9f2bc-4fe3-41a7-b631-4058e07fce05">
-              <sessionreference systemid="Liferay" datastarttime="0" techtypes="0" latestmodification="0" lastmodifiedby="" type="live" />
+              <sessionreference systemid="Liferay" datastarttime="1468266495094" techtypes="17" latestmodification="1470688676000" lastmodifiedby="admin" type="live" />
               <childsourceconfigs>
                 <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="048393a4-ceeb-4134-99d7-f84821814a82" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media Display - basic view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media Display - basic view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media Display - basic view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
@@ -355,39 +359,39 @@
               </childsourceconfigs>
             </businesstransaction>
           </chartsource>
-          <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Tags all PurePaths containing Web Request which served a resource for an instance of Documents and Media portlet. Splits on Struts Path which was handling the resource serving for this portlet." overridesource="false" sourcetype="BUSINESS_TRANSACTION" id="44392f65-94af-44fc-abc3-0bc0e1433f5a" position="2" displayrate="10s">
-            <businesstransaction groupingconstant1="BTSP1" transactionconfigkeyid="Portlet - Documents and Media - basic resource served" parentconfigurationid="5709db61-b0fb-438e-90c8-741cc06275bf">
+          <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Tags all PurePaths containing Web Request which rendered an instance of Documents and Media portlet. No split." overridesource="false" sourcetype="BUSINESS_TRANSACTION" id="2aee6b17-ac1e-493c-a5c8-d21bea3ebd82" position="4" displayrate="10s">
+            <businesstransaction groupingconstant1="NoSplitting" transactionconfigkeyid="Portlet - Documents and Media - view rendered" parentconfigurationid="4d111a41-51a9-4977-ba2d-8993642e5d3d">
               <sessionreference systemid="Liferay" datastarttime="0" techtypes="0" latestmodification="0" lastmodifiedby="" type="live" />
               <childsourceconfigs>
-                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="5431936c-c5d7-4680-be3c-2506d94eb889" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
-                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic resource served" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="ce5ed900-b5fe-46cf-8e05-e235a582f6ef" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="95" id="775058d2-22a1-40bf-9b5a-f940e6b1b0e4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
-                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic resource served" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="95" id="a23f8e34-f4b6-4fe9-a823-da30a3a03d61" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="b07b8865-ca7c-469b-80ba-c9093eeedd93" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
-                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic resource served" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="10daa8e8-8a9a-40c4-9845-5d6e76338845" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
               </childsourceconfigs>
             </businesstransaction>
           </chartsource>
-          <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Tags all PurePaths containing Web Request which rendered an instance of Documents and Media portlet. Splits on Struts Path which was rendered for this portlet." overridesource="false" sourcetype="BUSINESS_TRANSACTION" id="5356f4fa-ef87-474e-b1ff-4286a9f9edb9" position="3" displayrate="10s">
-            <businesstransaction groupingconstant1="BTSP1" transactionconfigkeyid="Portlet - Documents and Media - basic view rendered" parentconfigurationid="ea8325e8-b18a-40a2-904a-936765d0240d">
-              <sessionreference systemid="Liferay" datastarttime="0" techtypes="0" latestmodification="0" lastmodifiedby="" type="live" />
+          <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Tags all PurePaths containing Web Request which served a resource for an instance of Documents and Media portlet. Splits on resource ID." overridesource="false" sourcetype="BUSINESS_TRANSACTION" id="44392f65-94af-44fc-abc3-0bc0e1433f5a" position="2" displayrate="10s">
+            <businesstransaction groupingconstant1="BTSP1" transactionconfigkeyid="Portlet - Documents and Media - resource served" parentconfigurationid="5709db61-b0fb-438e-90c8-741cc06275bf">
+              <sessionreference systemid="Liferay" datastarttime="1468266495094" techtypes="17" latestmodification="1470688676000" lastmodifiedby="admin" type="live" />
               <childsourceconfigs>
-                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="08716501-e78e-44b8-8ce1-1b6646448924" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
-                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="5431936c-c5d7-4680-be3c-2506d94eb889" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - resource served" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="95" id="b61864c6-8a11-45a5-b135-7b578a73dba9" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
-                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="95" id="775058d2-22a1-40bf-9b5a-f940e6b1b0e4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - resource served" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="99bb7d2b-d497-4c83-87b8-19697c1b45c4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
-                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+                <chartsource systemid="Liferay" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="b07b8865-ca7c-469b-80ba-c9093eeedd93" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                  <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - resource served" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
               </childsourceconfigs>
@@ -404,7 +408,7 @@
         </columndescriptor>
         <columndescriptor special="true" displayname="Incidents" name="Incidents" id="incidents">
           <aggregationtype aggregationtypeid="Max" />
-          <column forcevisible="true" hidden="false" width="121" tooltip="The number of Business Transactions which triggered incidents" index="-1" sort="None" />
+          <column forcevisible="true" hidden="false" width="60" tooltip="The number of Business Transactions which triggered incidents" index="-1" sort="None" />
         </columndescriptor>
         <columndescriptor special="true" displayname="Incidents per day" name="Incidents per day" id="incidentsPerDay">
           <aggregationtype aggregationtypeid="Max" />
@@ -434,17 +438,13 @@
           <aggregationtype aggregationtypeid="Max" />
           <column forcevisible="false" hidden="false" width="65" tooltip="The percentage of errors that has been detected for this Business Transaction" index="-1" sort="None" />
         </columndescriptor>
-        <columndescriptor special="true" displayname="Compare to SpeedoftheWeb" name="Compare to SpeedoftheWeb" id="sotw">
-          <aggregationtype aggregationtypeid="Max" />
-          <column forcevisible="false" hidden="true" width="180" tooltip="Compare average Page Load Times to benchmark data powered by www.SpeedoftheWeb.org" index="-1" sort="None" />
-        </columndescriptor>
         <columndescriptor special="false" displayname="PurePath Response Time" name="PurePath Response Time">
           <aggregationtype aggregationtypeid="Avg" />
-          <column forcevisible="false" hidden="false" width="135" index="-1" sort="None" />
+          <column forcevisible="false" hidden="false" width="127" index="-1" sort="None" />
         </columndescriptor>
         <columndescriptor special="false" displayname="PurePath Response Time" name="PurePath Response Time">
           <aggregationtype aggregationtypeid="Pct-95" />
-          <column forcevisible="true" hidden="false" width="202" index="-1" sort="None" />
+          <column forcevisible="true" hidden="false" width="165" index="-1" sort="None" />
         </columndescriptor>
         <aggregationtype aggregationtypeid="Avg" />
         <aggregationtype aggregationtypeid="Pct-95" />
@@ -453,16 +453,16 @@
         <timeframetabledescriptor enabled="true">
           <timeframe type="Yesterday" />
         </timeframetabledescriptor>
-        <timeframetabledescriptor enabled="false">
-          <timeframe type="Last Month" />
+        <timeframetabledescriptor enabled="true">
+          <timeframe type="Last 7d" />
         </timeframetabledescriptor>
         <timeframetabledescriptor enabled="false">
           <timeframe type="Last Year" />
         </timeframetabledescriptor>
       </descriptors>
-      <ccontent enabled="both" ratio="0.212" />
+      <ccontent enabled="both" ratio="0.233" />
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@23029358" rightaxistimeframeoffsetunit="MILLISECONDS" locationassource="false" addfilterinfo="false" rightaxistimeframeoffset="0" name="Documents &amp; Media Basic Resource Served" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.DualAxisChart" id="d4dc0e51-bee2-4024-a0b5-1e9f370fb89e">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@23029358" rightaxistimeframeoffsetunit="MILLISECONDS" locationassource="false" addfilterinfo="false" rightaxistimeframeoffset="0" name="Documents &amp; Media Resource Served" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.DualAxisChart" id="d4dc0e51-bee2-4024-a0b5-1e9f370fb89e">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="11" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
@@ -470,7 +470,9 @@
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
         <criterion mode="all" type="applications" />
-        <criterion type="btm" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - resource served" />
+        </criterion>
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
           <timeframe type="Last 24h" />
@@ -478,26 +480,28 @@
         <criterion type="visits">
           <visitidset />
         </criterion>
-        <inheritancemap />
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="btm" />
+        </inheritancemap>
       </filter>
       <autorefreshconfig unit="MINUTES" time="10" enabled="true" />
       <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
       <datamodelconfig axisboundsmode="AUTO" rightaxisdatascale="1.0" leftaxisdatascale="1.0" axisdrawingorder="RIGHT">
-        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="StepChart" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="LineChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
           <legendcomposition agent="true" measure="true" host="true" splittings="true">
             <pielabelcomposition unit="true" value="true" />
           </legendcomposition>
-          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="62bd3b47-e22b-4610-a45b-1371a3e95550" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
+          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="62bd3b47-e22b-4610-a45b-1371a3e95550" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
             <tagtolabel>
-              <taglabelentry value="Documents and Media Resource Request - basic Struts Paths" key="BTSP1" />
+              <taglabelentry value="Portlet param p_p_resource_id (filter and split)" key="BTSP1" />
             </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic resource served" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
-            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic resource served" measurerate="purepath" />
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - resource served" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - resource served" measurerate="purepath" />
           </chartsource>
           <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
         </chart>
         <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
-          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="440" index="0" sort="None" />
           <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
           <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
           <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
@@ -518,7 +522,7 @@
           <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
           <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
         </table>
-        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="ClusteredBarChart" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="Count" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedBarChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="Count" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
           <legendcomposition agent="true" measure="true" host="true" splittings="true">
             <pielabelcomposition unit="true" value="true" />
           </legendcomposition>
@@ -531,12 +535,28 @@
             </lightweightuniquemeasureidentifier>
             <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic resource served" measurerate="purepath" />
           </chartsource>
-          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="68bd2c4f-4dde-4750-8478-6b781cd2cb9a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
+          <chartsource systemid="Liferay" sourcecolor="RGB(78,228,192,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="Liferay" parentid="68bd2c4f-4dde-4750-8478-6b781cd2cb9a" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="c37738cc-1a0a-34e0-a08b-c05a45df6b64" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Portlet - Documents and Media - basic resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
             <tagtolabel>
-              <taglabelentry value="Documents and Media Resource Request - basic Struts Paths" key="BTSP1" />
+              <taglabelentry value="Portlet param p_p_resource_id (filter and split)" key="BTSP1" />
             </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic resource served" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
-            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic resource served" measurerate="purepath" />
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic resource served" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Portlet - Documents and Media - basic resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="%2Fdocument_library%2Finfo_panel" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic resource served" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="Liferay" sourcecolor="RGB(205,25,25,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="09241154-b4fe-4ab0-9601-36ef28daefc0" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="false" autoscale="false" measuretype="ErrorDetectionMeasure" fetchbaseline="false" unit="number" name="Failed Transaction Count of Portlet - Documents and Media - resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="2" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="Portlet param p_p_resource_id (filter and split)" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Failed Transaction Count of Portlet - Documents and Media - resource served" agentname="" metricsimpledisplayname="Failed Transaction Count" agenthost="" metrickeyid="Failed Transaction Count" keyid="Failed Transaction Count of Portlet - Documents and Media - resource served" metricgroupkey="Error Detection" collector="" measuretype="ErrorDetectionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="68bd2c4f-4dde-4750-8478-6b781cd2cb9a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="Portlet param p_p_resource_id (filter and split)" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - resource served" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - resource served" measurerate="purepath" />
           </chartsource>
           <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
         </chart>
@@ -568,7 +588,7 @@
       </datamodelconfig>
       <ccontent enabled="first" ratio="0.5" />
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@5478597" locationassource="false" addfilterinfo="false" name="Documents And Media" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Incident" id="d6795156-7359-4ae8-84d3-6747093317cb">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@5478597" locationassource="false" addfilterinfo="false" name="Documents And Media" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Incident" id="d6795156-7359-4ae8-84d3-6747093317cb">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="7" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
@@ -576,18 +596,15 @@
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
         <criterion type="btm">
-          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - basic view rendered" />
-          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media Display - basic view rendered" />
-          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - basic resource served" />
-          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - basic action processed" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - view rendered" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - action processed" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - resource served" />
         </criterion>
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
           <timeframe type="Last 24h" />
         </criterion>
-        <inheritancemap>
-          <inheritanceentry inherited="false" type="btm" />
-        </inheritancemap>
+        <inheritancemap />
       </filter>
       <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
       <sashconfig displayoption="CHART" weights="500,500" />
@@ -602,16 +619,16 @@
           <column forcevisible="false" hidden="true" width="120" index="6" sort="None" />
           <column forcevisible="false" hidden="true" width="120" index="7" sort="None" />
         </table>
-        <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="IncidentTrafficLight" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+        <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="IncidentTrafficLight" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
           <legendcomposition measure="true" splittings="true">
             <pielabelcomposition unit="true" measure="true" value="true" />
           </legendcomposition>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Average response time degraded" overridesource="false" sourcetype="INCIDENT_RULE" id="9caeac6c-a480-4f34-a891-18fab28aa864" position="2" displayrate="10s">
-            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" flags="1" description="The average response time (median) is significantly higher than expected. Although the observed response time might be still acceptable for users, this behavior is typically caused by application or infrastructure problems and reduces the maximum throughput you can achieve." id="Average response time degraded">
+            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" visible="true" flags="1" description="The average response time (median) is significantly higher than expected. Although the observed response time might be still acceptable for users, this behavior is typically caused by application or infrastructure problems and reduces the maximum throughput you can achieve." id="Average response time degraded">
               <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
               <actions>
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.logging" smartalert="false" rolekey="com.dynatrace.diagnostics.logging" roletype="1" type="Logging Notification" key="com.dynatrace.diagnostics.logging" bundleversion="0.0.0" />
-                <actionref severity="informational" execution="begin" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" smartalert="false" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" type="Email Notification" key="com.dynatrace.diagnostics.plugins.EmailNotification" bundleversion="0.0.0">
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+                <actionref severity="informational" execution="begin" smartalert="false" type="Email Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.plugins.EmailNotification">
                   <property typeid="string" value="" key="from" />
                   <property typeid="string" value="group[Incident Email Group]" key="to" />
                   <property typeid="string" value="" key="cc" />
@@ -622,11 +639,11 @@
             </incidentrule>
           </chartsource>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="High Overall Failed Transaction Rate" overridesource="false" sourcetype="INCIDENT_RULE" id="029a731b-bc02-4e51-84d0-608d5cf4b14e" position="5" displayrate="10s">
-            <incidentrule incidentdashboardname="Incident Dashboard" timeframe="300" flags="0" description="The overall failed transaction rate exceeds the configured threshold." id="High Overall Failed Transaction Rate">
+            <incidentrule incidentdashboardname="Incident Dashboard" timeframe="300" visible="true" flags="0" description="The overall failed transaction rate exceeds the configured threshold." id="High Overall Failed Transaction Rate">
               <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
               <actions>
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.logging" smartalert="false" rolekey="com.dynatrace.diagnostics.logging" roletype="1" type="Logging Notification" key="com.dynatrace.diagnostics.logging" bundleversion="0.0.0" />
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" smartalert="false" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" type="Email Notification" key="com.dynatrace.diagnostics.plugins.EmailNotification" bundleversion="0.0.0">
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+                <actionref severity="severe" execution="begin" smartalert="false" type="Email Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.plugins.EmailNotification">
                   <property typeid="string" value="" key="from" />
                   <property typeid="string" value="group[Incident Email Group]" key="to" />
                   <property typeid="string" value="" key="cc" />
@@ -637,11 +654,11 @@
             </incidentrule>
           </chartsource>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Failure rate too high" overridesource="false" sourcetype="INCIDENT_RULE" id="1d63c7f7-1cbb-48ce-a242-754fe480a72b" position="3" displayrate="10s">
-            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" flags="1" description="The rate of failed transactions is significantly higher than expected." id="Failure rate too high">
+            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" visible="true" flags="1" description="The rate of failed transactions is significantly higher than expected." id="Failure rate too high">
               <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
               <actions>
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.logging" smartalert="false" rolekey="com.dynatrace.diagnostics.logging" roletype="1" type="Logging Notification" key="com.dynatrace.diagnostics.logging" bundleversion="0.0.0" />
-                <actionref severity="informational" execution="begin" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" smartalert="false" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" type="Email Notification" key="com.dynatrace.diagnostics.plugins.EmailNotification" bundleversion="0.0.0">
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+                <actionref severity="informational" execution="begin" smartalert="false" type="Email Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.plugins.EmailNotification">
                   <property typeid="string" value="" key="from" />
                   <property typeid="string" value="group[Incident Email Group]" key="to" />
                   <property typeid="string" value="" key="cc" />
@@ -652,11 +669,11 @@
             </incidentrule>
           </chartsource>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="High Overall Failed Page Action Rate" overridesource="false" sourcetype="INCIDENT_RULE" id="535d97f6-785a-4068-9fac-e4c6b45cabcb" position="4" displayrate="10s">
-            <incidentrule incidentdashboardname="Incident Dashboard" timeframe="300" flags="0" description="The overall failed page action rate exceeds the configured threshold." id="High Overall Failed Page Action Rate">
+            <incidentrule incidentdashboardname="Incident Dashboard" timeframe="300" visible="true" flags="0" description="The overall failed page action rate exceeds the configured threshold." id="High Overall Failed Page Action Rate">
               <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
               <actions>
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.logging" smartalert="false" rolekey="com.dynatrace.diagnostics.logging" roletype="1" type="Logging Notification" key="com.dynatrace.diagnostics.logging" bundleversion="0.0.0" />
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" smartalert="false" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" type="Email Notification" key="com.dynatrace.diagnostics.plugins.EmailNotification" bundleversion="0.0.0">
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+                <actionref severity="severe" execution="begin" smartalert="false" type="Email Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.plugins.EmailNotification">
                   <property typeid="string" value="" key="from" />
                   <property typeid="string" value="group[Incident Email Group]" key="to" />
                   <property typeid="string" value="" key="cc" />
@@ -667,11 +684,11 @@
             </incidentrule>
           </chartsource>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Response time degraded for slow requests" overridesource="false" sourcetype="INCIDENT_RULE" id="5c490d36-7faa-4c73-96d0-def72a88c53a" position="1" displayrate="10s">
-            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" flags="1" description="The observed response time for the slowest 10% of requests has increased significantly. This results in poor user experience and can be caused by application or infrastructure problems." id="Response time degraded for slow requests">
+            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" visible="true" flags="1" description="The observed response time for the slowest 10% of requests has increased significantly. This results in poor user experience and can be caused by application or infrastructure problems." id="Response time degraded for slow requests">
               <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
               <actions>
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.logging" smartalert="false" rolekey="com.dynatrace.diagnostics.logging" roletype="1" type="Logging Notification" key="com.dynatrace.diagnostics.logging" bundleversion="0.0.0" />
-                <actionref severity="informational" execution="begin" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" smartalert="false" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" type="Email Notification" key="com.dynatrace.diagnostics.plugins.EmailNotification" bundleversion="0.0.0">
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+                <actionref severity="informational" execution="begin" smartalert="false" type="Email Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.plugins.EmailNotification">
                   <property typeid="string" value="" key="from" />
                   <property typeid="string" value="group[Incident Email Group]" key="to" />
                   <property typeid="string" value="" key="cc" />
@@ -685,7 +702,7 @@
         </chart>
       </datamodelconfig>
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@531748bc" rightaxistimeframeoffsetunit="MILLISECONDS" locationassource="false" addfilterinfo="false" rightaxistimeframeoffset="0" name="Documents &amp; Media Display Basic View" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.DualAxisChart" id="f03875f8-fd8e-450c-a7d4-ab111165255b">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@652e3c0b" rightaxistimeframeoffsetunit="MILLISECONDS" locationassource="false" addfilterinfo="false" rightaxistimeframeoffset="0" name="Documents &amp; Media Action Processed" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.DualAxisChart" id="f47cadb6-6e70-41a7-87b0-f954085236d6">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="11" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
@@ -693,7 +710,9 @@
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
         <criterion mode="all" type="applications" />
-        <criterion type="btm" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - action processed" />
+        </criterion>
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
           <timeframe type="Last 24h" />
@@ -701,26 +720,28 @@
         <criterion type="visits">
           <visitidset />
         </criterion>
-        <inheritancemap />
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="btm" />
+        </inheritancemap>
       </filter>
       <autorefreshconfig unit="MINUTES" time="10" enabled="true" />
       <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
       <datamodelconfig axisboundsmode="AUTO" rightaxisdatascale="1.0" leftaxisdatascale="1.0" axisdrawingorder="RIGHT">
-        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="StepChart" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="LineChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
           <legendcomposition agent="true" measure="true" host="true" splittings="true">
             <pielabelcomposition unit="true" value="true" />
           </legendcomposition>
-          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="8ba1d48a-c1b0-4a74-9e5c-d9cb1d045a04" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media Display - basic view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
+          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="fd878c62-2628-4a4d-a647-6974d074f013" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
             <tagtolabel>
-              <taglabelentry value="Documents and Media Display Render Request - basic Struts Paths" key="BTSP1" />
+              <taglabelentry value="Portlet param javax.portlet.action (filter and split)" key="BTSP1" />
             </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media Display - basic view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media Display - basic view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
-            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media Display - basic view rendered" measurerate="purepath" />
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - action processed" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - action processed" measurerate="purepath" />
           </chartsource>
           <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
         </chart>
         <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
-          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="472" index="0" sort="None" />
           <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
           <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
           <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
@@ -741,25 +762,32 @@
           <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
           <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
         </table>
-        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="ClusteredBarChart" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="Count" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedBarChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="Count" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
           <legendcomposition agent="true" measure="true" host="true" splittings="true">
             <pielabelcomposition unit="true" value="true" />
           </legendcomposition>
-          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="2d348da3-6afb-40cf-a2e2-fbde602674ef" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media Display - basic view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
+          <chartsource systemid="Liferay" sourcecolor="RGB(205,25,25,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="9912002c-2d02-423f-9534-abf08c8029bc" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="false" autoscale="false" measuretype="ErrorDetectionMeasure" fetchbaseline="false" unit="number" name="Failed Transaction Count of Portlet - Documents and Media - action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="2" uiunit="number">
             <tagtolabel>
-              <taglabelentry value="Documents and Media Display Render Request - basic Struts Paths" key="BTSP1" />
+              <taglabelentry value="Portlet param javax.portlet.action (filter and split)" key="BTSP1" />
             </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media Display - basic view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media Display - basic view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
-            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media Display - basic view rendered" measurerate="purepath" />
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Failed Transaction Count of Portlet - Documents and Media - action processed" agentname="" metricsimpledisplayname="Failed Transaction Count" agenthost="" metrickeyid="Failed Transaction Count" keyid="Failed Transaction Count of Portlet - Documents and Media - action processed" metricgroupkey="Error Detection" collector="" measuretype="ErrorDetectionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
           </chartsource>
-          <chartsource systemid="Liferay" sourcecolor="RGB(89,89,13,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="Liferay" parentid="2d348da3-6afb-40cf-a2e2-fbde602674ef" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="489423f2-df25-3629-92c6-d48089a9d115" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Portlet - Documents and Media Display - basic view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="0e0a3113-3cd4-4335-b853-a8a10614d98a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
             <tagtolabel>
-              <taglabelentry value="Documents and Media Display Render Request - basic Struts Paths" key="BTSP1" />
+              <taglabelentry value="Portlet param javax.portlet.action (filter and split)" key="BTSP1" />
             </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media Display - basic view rendered" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Portlet - Documents and Media Display - basic view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
-              <tag type="0" value="/document_library_display/view" key="BTSP1" />
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - action processed" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - action processed" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="Liferay" sourcecolor="RGB(242,166,166,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="Liferay" parentid="0e0a3113-3cd4-4335-b853-a8a10614d98a" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="263e1b6d-6b3b-39e0-858d-644199b681da" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Portlet - Documents and Media - basic action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="Portlet param javax.portlet.action (filter and split)" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic action processed" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Portlet - Documents and Media - basic action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="%2Fdocument_library%2Fedit_entry" key="BTSP1" />
             </lightweightuniquemeasureidentifier>
-            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media Display - basic view rendered" measurerate="purepath" />
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic action processed" measurerate="purepath" />
           </chartsource>
           <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
         </chart>
@@ -791,104 +819,7 @@
       </datamodelconfig>
       <ccontent enabled="first" ratio="0.5" />
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@652e3c0b" rightaxistimeframeoffsetunit="MILLISECONDS" locationassource="false" addfilterinfo="false" rightaxistimeframeoffset="0" name="Documents &amp; Media Basic Action Rendered" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.DualAxisChart" id="f47cadb6-6e70-41a7-87b0-f954085236d6">
-      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="11" enabled="true" levels.per.tree="10" />
-      <filter>
-        <criterion mode="all" type="agents" completepurepath="true">
-          <textpattern name="agentname" type="contains" enabled="true" />
-          <textpattern name="agenthost" type="contains" enabled="true" />
-        </criterion>
-        <criterion mode="all" type="applications" />
-        <criterion type="btm" />
-        <criterion mode="all" type="hosts" completepurepath="true" />
-        <criterion type="timeframe">
-          <timeframe type="Last 24h" />
-        </criterion>
-        <criterion type="visits">
-          <visitidset />
-        </criterion>
-        <inheritancemap />
-      </filter>
-      <autorefreshconfig unit="MINUTES" time="10" enabled="true" />
-      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
-      <datamodelconfig axisboundsmode="AUTO" rightaxisdatascale="1.0" leftaxisdatascale="1.0" axisdrawingorder="RIGHT">
-        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="StepChart" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
-          <legendcomposition agent="true" measure="true" host="true" splittings="true">
-            <pielabelcomposition unit="true" value="true" />
-          </legendcomposition>
-          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="fd878c62-2628-4a4d-a647-6974d074f013" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
-            <tagtolabel>
-              <taglabelentry value="Message Boards Action Request - basic Struts Paths" key="BTSP1" />
-            </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic action processed" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
-            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic action processed" measurerate="purepath" />
-          </chartsource>
-          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
-        </chart>
-        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
-          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
-          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
-          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
-          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
-          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
-          <column forcevisible="true" hidden="false" width="100" index="5" sort="None" />
-          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
-          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
-          <column forcevisible="true" hidden="false" width="75" index="8" sort="None" />
-          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
-          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
-          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
-          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
-          <column forcevisible="false" hidden="true" width="105" index="13" sort="None" />
-          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
-          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
-          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
-          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
-          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
-          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
-        </table>
-        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="ClusteredBarChart" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="Count" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
-          <legendcomposition agent="true" measure="true" host="true" splittings="true">
-            <pielabelcomposition unit="true" value="true" />
-          </legendcomposition>
-          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="0e0a3113-3cd4-4335-b853-a8a10614d98a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
-            <tagtolabel>
-              <taglabelentry value="Message Boards Action Request - basic Struts Paths" key="BTSP1" />
-            </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic action processed" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
-            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic action processed" measurerate="purepath" />
-          </chartsource>
-          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
-        </chart>
-        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
-          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
-          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
-          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
-          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
-          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
-          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
-          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
-          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
-          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
-          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
-          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
-          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
-          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
-          <column forcevisible="false" hidden="true" width="105" index="13" sort="None" />
-          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
-          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
-          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
-          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
-          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
-          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
-        </table>
-        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
-          <incidentrules />
-        </heatfieldconfig>
-      </datamodelconfig>
-      <ccontent enabled="first" ratio="0.5" />
-    </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" heightmode="UseBackgroundImageHeight" locationascomparesource="false" source="server://dynatrace" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@7668f8fd" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="false" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" name="Text and Image" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="f57d48c4-5fcc-4c6e-ac45-20e15545c413">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" heightmode="UseBackgroundImageHeight" locationascomparesource="false" source="server://dtliferay7" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@7668f8fd" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="false" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" name="Text and Image" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="f57d48c4-5fcc-4c6e-ac45-20e15545c413">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="4" enabled="true" levels.per.tree="10" />
       <filter>
         <inheritancemap />
@@ -900,7 +831,7 @@
         <chunk offset="0" data="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" />
       </image>
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" heightmode="UseBackgroundImageHeight" locationascomparesource="false" source="server://dynatrace" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@21d341c" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="false" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" name="Text and Image" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="148d6a76-ee66-4b21-ac42-94e0514afc51">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" heightmode="UseBackgroundImageHeight" locationascomparesource="false" source="server://dtliferay7" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@21d341c" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="false" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" name="Text and Image" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="148d6a76-ee66-4b21-ac42-94e0514afc51">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="4" enabled="true" levels.per.tree="10" />
       <filter>
         <inheritancemap />
@@ -912,7 +843,7 @@
         <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAABM0AAAAKCAIAAAAo6j6wAAAACXBIWXMAAAsTAAALEwEAmpwYAAAkPklEQVR4Ae2dUWImN26EPX7cQyT3yP3PZaW+rwCSv8brnd3k0RypmwQKhQLIbkke2f7xj//6n99+/Pgt4+uLSa+sM7R7Z/b1Q0MQuesq/oFtjPANGP+EBzLjx+Q1j6RGfHHt4D6pxjL26LyG8BizUY+HKXlBe8vi99Vz8v5ZYGw1N1Hmhv72x3QrAr4ooLpvSma//wjMiVeIhB1CDZ+FLSYRB2b0dKlMw/dtm9ZXOVnJsIylWwx3M38IF3u2o1hQSxQLfVjKBewd2OUblLFF7JWd+qJtnKHQDeQ7cgE2eGPVsvt+U0hUnYMkGqk9EyNrAg5Z/FNdTnwOftXQwFXWQK9Bau1JWlW4PpQnMUnnwAGWF+q2zwkXCPsYBf7ihhA8bCxvGiwdCyNfrLPs85tVJyOPGHl+/PjdaAnLtIRIuLDM80HFyzz3XUqzGkCuo/cpiDxl9daVUac1rta7Ypo3bfzdR3XqH7bN8EqwBRVMEvg+E2cdQ59fA127qYJXxvRtl/CymyNs72WAMw4PxrSvabADoX8/CTnUuAgPzgLZSbQ3VnsRcgCsH96AeIJIULzL37K9Q3fNq2JoE3FSzLzPY6wWCmcduZaciTYwO44Lb+yJNrRnDNzFvkTLZHskEUsX19UsWc2x0j7OSX+yn0kde8JfpSHO63gHM3IF+fX1x4MvhOuPH3l3Z5KiODHtiK+UPj4BHLVsWAjh2frJFPosc5W108bgkR1YhojB1YLRP06KJQdYkwmD5+vr99/JA7CZkD3HA6uJmQjYvBWsjIkqZLQANiCXCfmWt0/Ek/fIg2gkMDVtEvm47xrO5n2la+kF4NFquyCSl6pxb7nM70LZE3vwAPw4yOg5xiX6g+8KoJJeTp4LTWHc7xgCiGkGb9PsfFaJyu1u+IVVRvMLnVaYd2RAgC/LvTNz95pY5mYNTp7RMMY5MKoxA6qCnD8tijhox7U3yMW1LSC+8g0MDLrkERygvLuhZDqKmxGufPszcG7H3pMa/IZXX6EDKz9RmdEP7DA0Dee5GWogdvnt3ln2iN6laYFDsNt2o2s96+U0a6y2TBkVpozYw4bOSe169JiPsE13KJcNFdYiw2YynJjiPYHDMpbWNI1qmM9Rp9irVnhjpJvw6jntGwBr1crrV5ZRxK1tp7yMRPAFcQOnwtB+laFPhCcADEa2cvgfBqYdT70xGKXkRtbQfM3ben07R4dpGyY0Uyly2ZP2PBIn5wHFQumDmXqHBBkleQpeir/v/04HPBHZOTbPzUxHPXIhcb9ydx/YCnBugUg8fVYmNM7uuzDmS1Hmq6uOHGjPtLssFER2fF5UxX/99ocfrMIjlWKZdcWXBM5b8xqmw1kPZKbxDrXQgVFv1l0lSmkhy7SwMiU0a396TDYTBhJE3UPAT5j9rua+a0skbPPmoVTw5iX6oSosEQH5Xh52LOWx7cumV/RyEBdGt2NieyMtHlYwGcXCyBIGQp4eA3w4jeBGuCP3rCzkGPBqnyycFyJLmQmSZCiNX8obMAnqJYQ8fErgHBmUNIO4mM5aM5lypmZn8I0fZJM2nPeHQ3vCxKnvDRozJycf8sWEEleZMPbGadYB3yReBV2KNHX9uXJwGQefOa9ybKfArH1V9zWOK35OKbBbSGw8pC0fV/yTMuitl3Djd3JW5k1AOpgxklQitBcIl7dSRXzCbAT4yu5k50/vElU+5WUew9C5RSOfhk5au2deDIMG5jwX+OSZerPMsNGmYhF/I0xGm2WAIp8gvLqbeLOr0+ahYDuihJ0CSz4hCZs+Z4nNRi5jbMRodsJmGbl5odeEDnXlZipi4azj3SBwWjspH9+ihoyojmHuMYgJLm5EcjhsCnoFErMHhur5qEM87o7uKQLyzel+fxHKTYeyiTwFmVU70bsTy+g94bChbde5J4Y/tLDWZX6yj6sAJQF6rHD2h8xkb7lbGmLyXTZ5kfcqi5G3v/uen1FDAo83Cwy+JtkJt9x5khY9UqgDQHWdPmOI2fLIsIQRzzYFxz7MUIn2mnJdvQLZksMwk8VAGBN805iylTomreZq3lMwgWwAenbAtkv2czxmQDB/hlmeyRtcwtYVwMoJBYxa0MBMi4kyVZ2Mic/CNZeHcTCJoxv63j4HGSsenHlYuFWdE54v6OSkTc6qRbJcsoq9e/JUEmTjpKSQo7GMRMYH7pTZJXo2EQKy5AXTAo3iFLjO1WjdiJhI0TiDNK/dBNzNXnosMZGlLibMkdQUs+CmzvaPDQ3kBOotIET0yWgVGcolocTMGp/zFU04hJhzw8ntnHYz530gxshh8hYD7KT9lhW3PIWrILDKbJj9rRsw+SEi/dRbqXOlDqWVNwkJSSARpOIzUugSM1wQMYexGTIdGpLd4SLB1CEDcqxMTFeZDp8CJyUAqzdtjdAZroCsFPUQYgCvi9NchVOhlCpmVl7KJ88ooG7ic7NlvrMrHlL6SMcC4jtj0jCgcwApm4Q6HnnJLX3rtY/kLSy3yoVj6pCfxHaGaoPdCjc74YkcUAiLkbX1w4gVWOWeenX9ffm3O+B3Bo2aRm+Hs8dsRkYduc2k8PGwTxf4fT/YW7ZrmDayAXPiAggDJIX2C/oGJiRHdDKXKMuAeRBDi4cJq4Mzn24Tk47HQKEEGGLYc7AgmcC9Cy06JukJP+5yHVT+GtMfietPa0MI5wds1FPth31ZXnibsjBoU3CWWvbu0pSxmK1PWdpL8jt4UIdh7EYdGbLKAHIesBv+fXYKGQfZ3f/JG38l2vYqOy2JaEZDC8PCrh6res/SMnm3zMgkSJZl0VHv0C6Se0xqS4Be0mTCZ2IaVkI6TJsnKJOAUkKrGCgnSk5jZXRtSp0vRcCzEzIVZE42ZKJP4bMWxYU1uA1AM6Z+sggrFkxB1VJA1qeBEyey2AatJjlMAkUnInZFW0bv49VI8pMI1C1rtFnC0u1dZPN2Q9jQ+doiJpeVRUp70Dw924+OxU/9bYQ1L0PblJBs5RlMtzPQNwUVeLi4J76ayAxZYcOdBSYDJrcJa45DRoL6XOxmlQuocOMzg44YXmhmwN0PnU3XjAZCEKnNwiSGjD8yKx2oWAsurSbrExu/qSD5ODCN2bwNEDDpJhru/OTmbpLMD3xUcQhbDWpjI1EbwnN1ilpCg/Nz3XGseiwhYpnPWrMk+1f/KSBOlBjaW2GDnhTYqk5FtRbYSORlTT6uufu10ka2W+StdhCW47GXRRJYMzlz1mKNgwW1/bM+ERvXPk+IeLnIYMJc5+vI5tjXCXTY+CT+fhA8g8wZIYbHqvSwHh2djKtEeBYPPUvzZNo8kuiJnDVZ5iaXiQV5lnaEihkBzms31dHVhM0riItthTFzyrF9U9eYVeXGRU/ZMdm2fv0hfI5oXxRLKI7LDEsbzWbWTkxU5mPYb+JK3KymxMlYzt6zhMUF52omYWSbrE8bCBgatWlnV69ZxOxvSU+UDZQS5slYPqy02+Hk6Gx9STCZgwLAuhH1rK544IqRdPi69BZ6VgzarjIXwEgfbz8QEoyJmHcAMT2gfJKod6Gy3jrwLy6TeAH0umuIYiVt+TI1s6bh0l+AoEr1SLCGEm9gyImJ7eYGVwaOgcX7posVhrjhSCu2HGPoX9sJ5oMyHhPAB7arhA8jE9OWn9XByfXzhd6gjXL0jtQHiZfiW3G+CCBDgyD15idMvjPmR01e1NURdyaM6HFm7FMvvtgEKGNgE9ZEDUopIgmIu4yZxCgAlkwd8QIRRGYj4hVOgfHTeiJ+rhfr3+Pf7cD+nNmjl72yu+yNg/OS0d3igLABmtbehfvGhu0WAhuqBrvYsyAK2jNhWyeZjNFVzuHPj3Cly7oSWCZ8Di36V9gAXeZ3XoggT9ZcVwP8NQE4seJey3hM18MnvxEbRY7Nn5+K46sn1ysME8fa0cniass1GGHKDfQnWMPBbD6nuVjbLlzVNlLgYsg8sVV0YrIUk3saFm0ZDToQSospH3EHgj6RQViMjfbV1pYSb5rpA/MddytqIV3y7oiRoKN/JgpAqiLmzLCGpLtckR+hzQu/uIjGAoX3ursYGumT5ahEm0VzVIelHM2NPjHAQGQddq44zJY5kQ3PVT3VIhY1+XiG+rCqvGmFyhO7/ZBx0hI8NMqQcDMmit1xY+egkg+d3idBYuAteRzHzIZncAGvfg/CbhxexkbYBtuijUSm+3jaITp9TijzJSidfTMb8eNTMv6Uc+ZNY0OKm0KKU/VQZm5TKQRQ++IuY3LQNwRzzvx02TgA+AhGP0uV9RgbT2Wr7QEEuYKxUoDP0cQYFUX1wU+afDDLZOpnEoG0jizOgyo4fx/4mUNuqztZ3AxXHghmFLxD2vfH/uOzbwvL3SiV5Ofb6HmCDmEK7ryVH/vQWCudcNJfdh3bFE+efGDcT0gSwNK/uvSvHPFHS25eJKRu7FwcM0sh4WhOmVYW93xLtLDSJXI3M9M2ugpK+vBjBq4MFUqVX8qtks0D6ke+tpHOOUxZNK4TIMHvHjntU3zSekBpcNjVtQUbGGJOTqlxzwfE6Lw7g1PlVUnirAVxs4ZWJq5ruDmEmBpfmlJjVT8sQ2C9i48xUwK5DQ15rZFgPCtEXEDcc5nNcyVM9KQpq7yDl4VIBuf0i1+TZm4F6RbJplCmSMqdtnYlmgC/pcbOV/wIQULzGpM1liGTVgB9ao2Vb5ITV1d7aTgUbYoysq1i9TWviG14/UBaxNoBxUpu8Xs5DdTQTdytb4RV2BYgmbQTLejytVy2iTRCuUw2Os0y67waZGgujV7a+bNu8fn7Meol1n8XCf42LC0aB4hHXxnawUSCXlIaD29tMWdC5APAkGPHyXM0XQ3kK9RQWShlcq3bBhSHU73JNA0wWTexMkgz6KbsVQHkoaG3WMyVJoApRw8qPkdfGclI3rQHTi7Ibb3M7iCFhmQ7HLptGEEJJ0OS5aoqDJIQUTbQ+RioBOq0DflWvM8ayb6PLafMEVGmmDML3hpLGHZ6wuLwXEB7GxVbJ3rpvrrg6WQYWAzLYcyEvhEBb65VZfq/L/9JB37w72fO8CzZYw122d3pGeje0/fuCzt0dsLNwjJGuTgQs4tD2xhOCTvHYTKmKK4uS5Nr3uAZeaF3MvZPnZyEzyhgP1tiinFjS0UtPUlDPaElzEPRH8Nbr5xEiG0NmX5mykq1xDofRmP2EhF04CNUcPPyFF7nnYE3+cCki42x4YaCmrBxF+Te/VTvhA+EQJO4d2vc+D/DbiGrDi1+/tRbNqqvmE524yr65pqz0TIn5RZG5JS7p+ujRmOTPmUqY/a34gYp8bxQV8O37GZduJslmxuwuuSkegQ1gSBaz9lenNT1DyMwzn/u6OTPWhL0ESjJhHVeWvic5YjOlkrDfCaXqCFVObkqyrwpwAgvAeF65gZn3Qd2qMZf2XJ9THFX9E3dXGKdxtOdbDYDbiVx8aufJYG7SaIis4k7c5OIGOegJWA+AL0UMsTjmjPSdG2gIaa5zfErkznR0olFhLACTXOEOiHlQt3xk5rkGa/2+lRJwQaS4dX0bDChsDxpkTVisPdoPgyt0cQGEs5Q4gl0mdj0qex7v9iZeeMyvzRbc63LXfJczwsBYfuAvNSqaHAY+f49N9aHSmdhW/UQ2CTe1+RBeQPnLTwEy/OqNWT93GlajVmhYDLN14NdDoZcpiRxx4s40d9ch3pakTz9YkOxK35jcldY75V08iabFp0+QCxZrR6mO1fqWQV1YP8UY+hKyuLQD+fRq4ICF6OQXky1Mv4076dq6zr7yOH5qPSnZFCvuoigxlFx/wXLq6RlKycX7zElICMbkX93l/jwpM+8iG6fpMYZE3heEPzi7TykpSojJED2+W2idoh5sfN+CC6jW3NIMhFGMvQoq8iCm/Y8Ka2aqxQ9GfViqHHjm6vMVOXhOW+b9U5Qlnlms+gfa8LVIIJvlSQw1ZTDbZ53Oya1sXvoD1ECATee/vOrmP54wqQJ04b7rJjLOt0S5fWRfDTYpaqadiph0jifwFFun3nE1hzMVASiUzeOlkymWo2gHZMJ+ECSb7+TjcXsnJ07Yg121bolb1fL2I5PTgMml7rWq0yyJMiX7TEQSaIqEDIFKWnnqGKOzNo+DypuSHqnXmDRPvh1tUHsorXWb1gjk2E0K+Vk08vlqYilmiiKeW8xVwkCsMI4f2oAAYTszMrSvil01Y5XVHdwqTX9ffnPOvAe8tmDJboHIjPfIvHsnnRb2DZ2lhFLJzVq66nTENiJAcc76x2Ee2w5P/s45ifMT9RENHbPUqiCG+BJArS2XHsgg+GfGT+kUDg2Tb+34S/5T3hVgcrLNBSc+1D4pcXXa5OXSJ5+Q8I/7yRIGZ1Plv2He4ge3a06fiD7iAxcGi5Zm+WGCR5X/JZjFFmpk8Vt9SQbH3FTf2D9wHRmEzhRFoJOP3KBhttHFnqEA/fn8PHHp7nvJKGf2DhC2+sSFPGJwxeL75TFYTqpC09WahTJq9Aw2o7btw1BWHeQPRaJ4wiW7yTc80BgqDUMmbAEfik4HDE305Jyb+RrmXklKwmaTJx/RyYe0lNgEpnrAzcVFuqVtCoWVz/TlWMu84LbFTXtIGsda6lTxKEO85VtSMNi7cqnh25N9CQo+2Sgb9pBcZT4MGsMIjfJFtKDRLgfbfxQJ2RhcsRckWJlvpJHlvnZUjh8Ei/Y3R8ZEpKUALNOzITVr3ipRjd14Sp7CQcKceQ0cRh5uWDZhCozwrb4mEh1ghBTeil5jKRsgrC1maSI57aGvzXAmIExH4MsJolvbQ8h2vphgvnNVWLbFaypgm3M6JXZxxxV6+rkLIu9NdkJ+SA0CKk771T7nLiAfAsvfxEp8fyeLfJ6LuPDXu2T09/1GuP+HDjVtEkWZkYbDUf6Ckk9JLwzehtf1dj/5Ovq47vNDUm9FgLDfnZHSIRc8i0D5PKT9B2tsFtPDGUKDSi+F+o8jOUaD6kZe2duD8dARVYxShZHXrhYN09x9X/knZa4wRse8MVozAVhuRVjYtRMOFP7wmtRMTDQqEe7S2IAT6X9OeYkdClkMqZjNI2QaWaOVd+9cVBgErq7mylWxCckXmZMO1DjvDEl3LhxDJKss79yZIlnhDjRHjOsQ4LUXdX9JAa3UnJ32i5BDLBbBayGKW/Kn2LKCEZNgdLXYKQoCFsJi5MRHCj+NEcnJUxA61US5c8PmTwf2AjyLzmbBwppEBkPz0uTsoyv3gHrG1sDRYmLueLDMYZxPnzlBKlRqbl0cRmxU6bZEWVXFFE9SEsQH/HplUP+EWsdOy9mGtj93XQEXhikdjdW8yKi7gBXEXlOkEpZLUtmG8HkJqjYC4OPFY/5qTfHJzgzlDGCQrHPVLrSvVrEoSPPjulJW7v1xjkYY0bX9cZg4snOsgqA7yfyErIlDucSeo+vd3YQinmCV9xf3Bv3F4C6fhH2L3kO4BcJfxF2aP//Jj/+8d//4x5kD93ENLYTcrBVPYa5amAHZo6/m1wX/ox6szlMIJCmPtaMcWVWLwfRzWSygx/5HjH9pyE4NW7LONXNtXHeH56xYzGvKUfVZ4oiKX9TOB2CVX0yB2aF6889mvMViOt+WzKTbUUwmfK196dYaJavOUYIyhlz/9R8Cnk1Byz9RhoOw+7XhyOLrVdgG/Acgw3nLph7qKaUFX2c19BIKg6aIF5BVcHj/k/Gn7kO2PhknrMx9V8mgJyJadfbH8WvhhLySnnSxWiAFSzHipeRV2pPKdhW1pQDs0peVXA0iXlHUDMgl7Smf3D0BMQjSZyi+1PyuMwMyfNPikQV3zpIL55STr/fGUJICdLb0XwCSqJ/ty8+1o7r3hxK2xI2fbAn79rCsnllGULJc2D635utUWBTGdLUIE9pa1+jItkq03FczzfzKmwRI8q9Zr6vHKTJrpqQ5KHO8Bznv3jD84tHr9y3FrUWYKJtRYW0HoOTNCNTE828tucMmLeXAEcfs1MAh00hjWW6fusamc0lJhZV+jUfbsMzAd+513ggb+1GKGQwUC3M6ZzFYibBwQyyGfiWZRIdQCab3Wm493AP4wKsquHlCTI/Oh68qR6QcdWzJS7zZBTsnjbMiBwe/9sVqyb3581CB3d//fU+s27tV3HN0ILWXmcdXs2wXzPw+jlYX2ZrVAOL2Rd5s/Z1w618MVde7kxvFmR4dFBPN6psIVAR4J+dYLmajH5fmwdcFEtICfnI61OjHaDeg8NsmhOSyUfePTAlPgydwFZCHhD+mD6cdIR5EbkqH+z8BYuRrMkmMmcj8wnkQdacgOExeMO2EZto87b28GzybmNWE9GjANdpFyIlTypfIAQ7z1UZVwNERMpWhixbXbNmRfBQzu0RNGATxnsLyTcwRhGbjzjinncAy/ym8Dy/hUENC9gkHGPrXZ8bcVBHmIGaF5Bkit5+9qU9v92MCBtzH9/k02I6mE4hiicB2ogrsfraMGKTp3ZgA+beuQYfqoanSA9YVv4tN9ZBqrqZMkWTHIfrEFZAeYK/9ps9tAyPxu6Lkp58Vd0zMCxwgbji41j+rbMnZvgPviiDb0lHgGJgtRXGIq+peKn5XVEzyFS6AtMyX6T9N9/wHE3OY9l6TdGeHGv2fGQ1brZbo41OUMG53nLbfxw0cJR4E6PWWltU+xak+2sAwXA3+tJM2N+3X+9AvkA+YHo9W8IRssv157HpadiuG+WW8EyBLQ+noM89awi9LktBMeb53pBg6g73sBi18975it+PHgWT+p4o56Kr3xWXMWtdY+6oqrLiR9eovXEisQorWa6dbBB3/P6QmQbmG4ay7ncOADaEJ7LH9zEC6DiwEt7tkGG9YDPPR2GdzRL7GzfMgabnuSYk9zKsbyzyJZq312Y4kG8Td2sfV+BHz2FnYjbzxo8AVJTeVcNyVdqnA1/J0OdHAHIYYCOdzeWUdowVRgw+NJcxV2Z9D8PoUBlAvAkyJVEtVgyMwU1lQ1tsPATjPv5a5oqTIWMydDghQG1rrc+GnC60cWUpTpkDjSUsDGYocbl69KTgk1cx5h1ZJ97wFQKRxJEX1jVLR4770La3yZf6FIGU4pUzIUNHbIjx5zNRCnWBEB4TLDMgtBliWx/e2DcHyM2rWZo9MOuJsaRz9VbBx76Nu3QprZXQwCmQzAdBcuzekFoFUBrocklabUzm3TKyag5omasnF+6Nfw+Axmc3u55yESZLIg9tEHBJa/LSYkV57GRxkByohTwxYWtpC+QuF22pcW5d2AemEMbDOuQvSess/F4FznIZK1KlkGRSHn7IrPbc5hGnFHNdSmfYz1+9fvYG1/SAab7kuKGpbMVkNmVCvSchShq6HZCnlzjw6Q+OSvjM2un0mYXfO4sz0v0zhcuNm81UkheZ5uAVFC7a0JwxETKqnZcvNhQEGIb7EIu3br3IzKT8FY2wcg/pACUbD/OMN680NQsirX19NOmALk7lZX9Z2ax0e3RAdcYzT0jxCCOI46H/bJBkQ8j+loaSpoUJ49+hhQd3rJk1atFZ6uJG57K4/a+BvG1vE0ihIku7/cSxwLAdHifHAP8cvFGcsLsPCqNjGi8C8g703kRrPc4WIia0ycQHAflE9W5HDCoZe5UH4BmavLRDYreiKWJjBdVpC7jyaDafIbPMzZFvogLLCoOzORssnx4Q1hhmUgfdDKzWp2eWndPZ2fDY2bgJTIZ0wx12Ci885oHZsfV2gVkL+Sxx/JcTYPu71KOpjiFuPIIwM3CQ3cncs9YkAIfnVQrjUGA9G0s9BYdhUu3a+3UDsGDEPlkK88r7KTC/qa2B68NrrjxofT8PyQoSO9VQ55UtF5ee6lnGnw+A3GJMdSZwqcF6l3LhE85tFBi6jZSiFS7xBW7A25aH7+/pL3Vg/7nQ7J0x2TQGe9dpnDxsGHkkuZ+R1fuwzz49L9kAslXsljvJFK+EfWjL5eEBIz+0sXv0emr7T0PAytikccH6pLvy5kkukTGKn0LKU2FkeoZY1tpZlYpltWSirWcw9nZFfGz956H3h8zChvA0kMl9ioJRTLG1+9XrfSbBZLybxXrzdpqVbZMJ12ZcmE0jyJyGt+3qIcAoswMxjqQdngZIpy1aySGutDAo4ns0oo583rKMIZ5E1BdHVOAwbVN7LRr68Cv7xpusweT5RkuMtiAQwToowmHWxdry+UaD1LSEQsZ7KMQRSHTAUpRo0nomL/FkGdzkNQmX5p9Z1rcpO6uvfZm8cMWMSDOrUkVIsK6RLaF9OswJq+hA5EZDgo3A1pk5Np9ZsFzYztusVhIbI03hCjgz6ZhgpQzvIJgE1j5nMs0ef7ZJSVwJ2+tIILZNcAYRw0ImbgpZV+4mTz51cRgmKb1LCZzrxBoeDx2eHSZwGmMUGstmVnDE0c/tn4TiZLwdctOJbyI0Z0agXNAWQrC+3qURslKarqa1nVXgMC6Je4HmWCdTofxHgwDtsA3VU0HWFu8bOL0DQBlLWJ4JW2PKkfusYbJjb09u6DbCoDU3oFSGxTF5hh8VlzAZKKSQBYZR4XlBI9n/YSZTl3gyoWMjD0J/70sRwfN+L+phzFS8oY3tNNbCcs+Zy0myz7HBF3U94U1hSE9cokLjM9o2N4AkEqqGnGxcVUMsObfJWxdZOJv6McluNuKZzH3oYTdAn3g4pxTQ5m0NQR4OzIkhnkEJUlC9BzWAcWwMWujCDnobX2zkxU7eLHTEYlNizhqc1w2uNQhdsCqFUD4yIKPFCKMtMeUkECEyIL4pmryNNsbEECAWbcDDAWs+YXTKdkwKjPgQWUrWrrSCz4CQWEFZl/Ombt+yhrcMgqiheY9LOgRIc6hIBGvt6mQ1krVG18rJLNMqolcEq8HWV93EWumkQQQ9bSEjIDeH57FywUkYh3nMawnNmzW8dfe7KUQUphqPRvzmak+A48tAvvp0n1z1JY/dJlUGTMoyKAa3L4jEUmn+iARmALc5KkQHhXIz48E5uISSbL1CcE1msAgdtQ2SqQBpPEsbUEXLRzxsyeLstAxSPXaJjQNFIgPIyjIfEzfm3OwGJY8JUGLBEZIx3XA9acSmVB7w/FFQCXK1j131WeGbYyUZ9tYLylpMb0y4UJD8pSAmCtStjYe4voEOOZ03Abdo4upavkocgIwSD0am1ju78ymgvL9yvaL/Ev2LsL/k+HD+IuEvwj6o/8MFr9QZPhG7n7sHPlEcnd3cs39GZbXIsrDiXPbPMHO7cbONEBo7BPNweDCNm9+R2P8IEH+fuSMhE7W8cC3D8Q18oWjNkdsfWFGeoBMlOkn6CyKZnNKi9MBC4QcnlyGJX5kM9K80Yz595ZuZjKIbyrVNwDE8kUEF7X8A/MlTfYuS5l4AbLAaqnDYHh5yH7CFXJLOjLlPInl5W5xRTiyZKdyppF0DnSyd5oqeLY4VhFR+bfB+WFA3eUVVhUmhrYDWIj/GqmA2AwoVe5kgLLOe/Dl+Rc163AjKkFXFFjg5cdVIGSNnDgL2DJD88Xlpxlw7ESBOPjlQ29CDkXhVATKOfsK/sFBk+rFRzRuQDTjIyX6IOgnbk5cVzERmDtPgV94kV4UaCgNFprNxaMzxThGiJqxk9oxUWB1Jugs6puaTOARyoOYTZkoI6hAFolxdGiXmsxPYaXFSc9u+YoWPQpzIvjOoA4a5GrsbWUX0OuonZcZUAT9Z6lsl8BwGWcsvziTMZlx6kMqzhixYb9NAG7pJfGNj0QHU6e2zy14owrhiYlzZTyESnLrAt4ZMtJ5fW4XTdpZ8rtsH4fB3omjShsOk1LtUI38YulrbKmStFl+17il4KsotKP+bLrPE49j/2yeLvKwDHZ5OWtpYA0HsjN24KZqDAe74hd0VVR6Ts+uLnT4M8fwi3jxxUwjdaIZAm6TNbl7mic8iVz4mjC0x73Ypi+Y56XYi3SkqWmTC0IBSa5T12zEggO1zmGTCMBgw6wooBabNW7e7jvyTuLMij+N0EwIroIFSNR9RkxBD9/FDHzqSZjol9v3eIjF8h0Crq/DUf3nDlzyTKNvmf7IqS8m8tEleQ9i3XN2IchS3i3GSkg/Mc65W/KQj7QCYHBni51A0LyRBMHJ9ZxrbAKbNsF1sAsMaaTiJ2uYmb/XwiixFrpY6kuvCj+Jd5Y6fL+5DiHcKmcrADkn/d0XstT+hUO8zhgl3pm1RHm2TNSFXZzgzSYuCvHouX/GQq4d9N0KZJ+seHLjU+J7+iij7pYNSLCbENVTtF6V41b3q33qrZsppcohDUUL9hzATazsnBFqMDcmtHbHMES5daF6SUUusfHa6Kb2m/vwHs/lCGEZjG50EmTAfBt7PgyOPvs9605lv9cogR0OICp25ws10mPRT26lXy2ruYq5E8TMxDBJKss5Z9CYUzwsZ5L+8/WLML8L+ZboD+EXCX4Qd2v/D5H8BgPBFSLGPdu4AAAAASUVORK5CYII=" />
       </image>
     </portletconfig>
-    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/chart_cust.png" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@3f52c6c6" locationassource="false" addfilterinfo="false" name="Percentile Response Time" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="3e3acfb1-c26c-4ffc-b4c6-61777ea9c2ea">
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/chart_cust.png" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@3f52c6c6" locationassource="false" addfilterinfo="false" name="Percentile Response Time" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="3e3acfb1-c26c-4ffc-b4c6-61777ea9c2ea">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="3" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
@@ -920,7 +851,11 @@
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
         <criterion mode="all" type="applications" />
-        <criterion type="btm" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - view rendered" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - action processed" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - resource served" />
+        </criterion>
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
           <timeframe type="Last 24h" />
@@ -933,37 +868,27 @@
       <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
       <sashconfig displayoption="CHART" weights="500,500" />
       <datamodelconfig>
-        <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="PercentileChart" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+        <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="PercentileChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
           <legendcomposition measure="true" splittings="true">
             <pielabelcomposition unit="true" value="true" />
           </legendcomposition>
-          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="cc4227d4-79d1-497f-a238-e2db27a2dd5c" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="2" uiunit="ms">
+          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="cc4227d4-79d1-497f-a238-e2db27a2dd5c" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - resource served" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="2" uiunit="ms">
             <tagtolabel>
-              <taglabelentry value="Documents and Media Resource Request - basic Struts Paths" key="BTSP1" />
+              <taglabelentry value="Portlet param p_p_resource_id (filter and split)" key="BTSP1" />
             </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic resource served" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
-            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic resource served" measurerate="purepath" />
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - resource served" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - resource served" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - resource served" measurerate="purepath" />
           </chartsource>
-          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="f119f920-5413-47e9-b78a-abe0756761bd" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
+          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="f119f920-5413-47e9-b78a-abe0756761bd" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - action processed" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
             <tagtolabel>
-              <taglabelentry value="Message Boards Action Request - basic Struts Paths" key="BTSP1" />
+              <taglabelentry value="Portlet param javax.portlet.action (filter and split)" key="BTSP1" />
             </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic action processed" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
-            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic action processed" measurerate="purepath" />
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - action processed" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - action processed" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - action processed" measurerate="purepath" />
           </chartsource>
-          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="1bcca4d6-b4c1-42e6-9197-6505a234f889" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - basic view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="3" uiunit="ms">
-            <tagtolabel>
-              <taglabelentry value="Documents and Media Render Request - basic Struts Paths" key="BTSP1" />
-            </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - basic view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - basic view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
-            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - basic view rendered" measurerate="purepath" />
-          </chartsource>
-          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="57944570-3e13-4b27-9fd5-47fe37caf50b" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media Display - basic view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="4" uiunit="ms">
-            <tagtolabel>
-              <taglabelentry value="Documents and Media Display Render Request - basic Struts Paths" key="BTSP1" />
-            </tagtolabel>
-            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media Display - basic view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media Display - basic view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
-            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media Display - basic view rendered" measurerate="purepath" />
+          <chartsource systemid="Liferay" sourcecolor="RGB(64,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="Liferay" colorinheritancemode="random" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="2a2b8347-b9dc-473c-9775-8feb8e8bd86c" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="false" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Portlet - Documents and Media - view rendered" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="3" uiunit="ms">
+            <lightweightuniquemeasureidentifier systemid="Liferay" application="" parentkeyid="Portlet - Documents and Media - view rendered" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Portlet - Documents and Media - view rendered" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Portlet - Documents and Media - view rendered" measurerate="purepath" />
           </chartsource>
           <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
         </chart>
@@ -995,14 +920,18 @@
       </datamodelconfig>
       <chartcolors />
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dynatrace" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@322593ed" locationassource="false" addfilterinfo="false" name="Process Health" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Incident" id="45d34bfc-a414-4ade-835e-921712052dc1">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://dtliferay7" sessionid="Liferay" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@322593ed" locationassource="false" addfilterinfo="false" name="Process Health" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Incident" id="45d34bfc-a414-4ade-835e-921712052dc1">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="7" enabled="true" levels.per.tree="10" />
       <filter>
         <criterion mode="all" type="agents" completepurepath="true">
           <textpattern name="agentname" type="contains" enabled="true" />
           <textpattern name="agenthost" type="contains" enabled="true" />
         </criterion>
-        <criterion type="btm" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - view rendered" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - action processed" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Portlet - Documents and Media - resource served" />
+        </criterion>
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
           <timeframe type="Last 24h" />
@@ -1022,16 +951,16 @@
           <column forcevisible="false" hidden="true" width="120" index="6" sort="None" />
           <column forcevisible="false" hidden="true" width="120" index="7" sort="None" />
         </table>
-        <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="IncidentTrafficLight" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+        <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="IncidentTrafficLight" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
           <legendcomposition measure="true" splittings="true">
             <pielabelcomposition unit="true" measure="true" value="true" />
           </legendcomposition>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Application Process Out-of-Memory" overridesource="false" sourcetype="INCIDENT_RULE" id="9a0d2731-0856-4773-8d57-20caf3385e25" position="1" displayrate="10s">
-            <incidentrule incidentdashboardname="Incident Dashboard" timeframe="10" flags="1" description="Application Process reported Out-of-memory. A Memory Dump will be automatically triggered if not disabled in the Agent group settings." id="Application Process Out-of-Memory">
+            <incidentrule incidentdashboardname="Incident Dashboard" timeframe="10" visible="true" flags="1" description="Application Process reported Out-of-memory. A Memory Dump will be automatically triggered if not disabled in the Agent group settings." id="Application Process Out-of-Memory">
               <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
               <actions>
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.logging" smartalert="false" rolekey="com.dynatrace.diagnostics.logging" roletype="1" type="Logging Notification" key="com.dynatrace.diagnostics.logging" bundleversion="0.0.0" />
-                <actionref severity="informational" execution="begin" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" smartalert="false" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" type="Email Notification" key="com.dynatrace.diagnostics.plugins.EmailNotification" bundleversion="0.0.0">
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+                <actionref severity="informational" execution="begin" smartalert="false" type="Email Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.plugins.EmailNotification">
                   <property typeid="string" value="" key="from" />
                   <property typeid="string" value="group[Incident Email Group]" key="to" />
                   <property typeid="string" value="" key="cc" />
@@ -1042,11 +971,11 @@
             </incidentrule>
           </chartsource>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Application Process Unavailable (unexpected)" overridesource="false" sourcetype="INCIDENT_RULE" id="c533c237-d5b9-4adb-a3fe-f928ee82eb3f" position="2" displayrate="10s">
-            <incidentrule incidentdashboardname="Incident Dashboard" timeframe="10" flags="1" description="Connection to a previously connected Application Process/Agent has been lost and agent has not been able to disconnect.." id="Application Process Unavailable (unexpected)">
+            <incidentrule incidentdashboardname="Incident Dashboard" timeframe="10" visible="true" flags="1" description="Connection to a previously connected Application Process/Agent has been lost and agent has not been able to disconnect.." id="Application Process Unavailable (unexpected)">
               <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
               <actions>
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.logging" smartalert="false" rolekey="com.dynatrace.diagnostics.logging" roletype="1" type="Logging Notification" key="com.dynatrace.diagnostics.logging" bundleversion="0.0.0" />
-                <actionref severity="informational" execution="beginAndEnd" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" smartalert="false" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" type="Email Notification" key="com.dynatrace.diagnostics.plugins.EmailNotification" bundleversion="0.0.0">
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+                <actionref severity="informational" execution="beginAndEnd" smartalert="false" type="Email Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.plugins.EmailNotification">
                   <property typeid="string" value="" key="from" />
                   <property typeid="string" value="group[Incident Email Group]" key="to" />
                   <property typeid="string" value="" key="cc" />
@@ -1057,11 +986,11 @@
             </incidentrule>
           </chartsource>
           <chartsource systemid="Liferay" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="Liferay" autoscale="false" name="Application Process Unhealthy" overridesource="false" sourcetype="INCIDENT_RULE" id="6d66905f-d9f2-4e97-a5fb-21bb7bf3bdb1" position="3" displayrate="10s">
-            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" flags="1" description="The Application Process has had significant suspension time for a sustained period of time due to spending considerable amount of it's execution time on Garbage Collection." id="Application Process Unhealthy">
+            <incidentrule incidentdashboardname="Incident Zero Conf Dashboard" timeframe="10" visible="true" flags="1" description="The Application Process has had significant suspension time for a sustained period of time due to spending considerable amount of it's execution time on Garbage Collection." id="Application Process Unhealthy">
               <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
               <actions>
-                <actionref severity="severe" execution="begin" refaction="com.dynatrace.diagnostics.logging" smartalert="false" rolekey="com.dynatrace.diagnostics.logging" roletype="1" type="Logging Notification" key="com.dynatrace.diagnostics.logging" bundleversion="0.0.0" />
-                <actionref severity="informational" execution="begin" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" smartalert="false" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" type="Email Notification" key="com.dynatrace.diagnostics.plugins.EmailNotification" bundleversion="0.0.0">
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+                <actionref severity="informational" execution="begin" smartalert="false" type="Email Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.plugins.EmailNotification" rolekey="com.dynatrace.diagnostics.plugins.EmailNotificationAction" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.plugins.EmailNotification">
                   <property typeid="string" value="" key="from" />
                   <property typeid="string" value="group[Incident Email Group]" key="to" />
                   <property typeid="string" value="" key="cc" />
@@ -1075,7 +1004,7 @@
         </chart>
       </datamodelconfig>
     </portletconfig>
-    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" heightmode="UseBackgroundImageHeight" locationascomparesource="false" source="server://dynatrace" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Documents &amp; Media Overview" folderid="folder" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="false" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" name="Text and Image" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="7021a0ea-98f0-4440-87de-e70da2e85201">
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" heightmode="UseBackgroundImageHeight" locationascomparesource="false" source="server://dtliferay7" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Documents &amp; Media Overview" folderid="folder" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="false" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" name="Text and Image" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="7021a0ea-98f0-4440-87de-e70da2e85201">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
       <filter>
         <inheritancemap />
@@ -1089,4 +1018,3 @@
     </portletconfig>
   </dashboardconfig>
 </dynatrace>
-

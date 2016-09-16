@@ -15,7 +15,10 @@
 <resource resource="dashboards/Liferay CMS Page Performance Analysis.dashboard.xml" resource_type="dashboard">
 	            	<instance instance="server"/>
 	         	</resource>
-<resource resource="dashboards/Liferay CSS and JS Overview.dashboard.xml" resource_type="dashboard">
+<resource resource="dashboards/Liferay CSS and JS Overview - Server Side.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/Liferay CSS and JS Overview - User Experience.dashboard.xml" resource_type="dashboard">
 	            	<instance instance="server"/>
 	         	</resource>
 <resource resource="dashboards/Liferay Database Performance.dashboard.xml" resource_type="dashboard">
@@ -30,13 +33,16 @@
 <resource resource="dashboards/Liferay HTTP API Request Analysis.dashboard.xml" resource_type="dashboard">
 	            	<instance instance="server"/>
 	         	</resource>
+<resource resource="dashboards/Liferay java garbage collection.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/Liferay java memory pools.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
 <resource resource="dashboards/Liferay Login Logout Overview.dashboard.xml" resource_type="dashboard">
 	            	<instance instance="server"/>
 	         	</resource>
 <resource resource="dashboards/Liferay Message Boards Overview.dashboard.xml" resource_type="dashboard">
-	            	<instance instance="server"/>
-	         	</resource>
-<resource resource="dashboards/Liferay Operations Overview.dashboard.xml" resource_type="dashboard">
 	            	<instance instance="server"/>
 	         	</resource>
 <resource resource="dashboards/Liferay Overview.dashboard.xml" resource_type="dashboard">
@@ -48,10 +54,16 @@
 <resource resource="dashboards/Liferay Search Overview.dashboard.xml" resource_type="dashboard">
 	            	<instance instance="server"/>
 	         	</resource>
+<resource resource="dashboards/Liferay System Monitoring.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
 <resource resource="dashboards/Liferay Web Content Overview.dashboard.xml" resource_type="dashboard">
 	            	<instance instance="server"/>
 	         	</resource>
 <resource resource="dashboards/Liferay Wiki Overview.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/Liferay Worst Performers.dashboard.xml" resource_type="dashboard">
 	            	<instance instance="server"/>
 	         	</resource>
 <resource resource="profiles/Liferay.profile.xml" resource_type="systemProfile">
