@@ -11,5 +11,5 @@ The dynaTrace FastPack for Liferay Portal 7 provides a preconfigured Dynatrace p
 The current release, 2.0, is for Liferay 7 on Dynatrace Appmon 6.3.
 You can find the fastpack 1.0 for Liferay 6.2ee in the releases section.
 
-Find further information in the [dynaTrace community](https://community.compuwareapm.com/community/display/DL/Liferay+Portal+FastPack). 
+Find further information in the [dynaTrace community](https://community.dynatrace.com/community/display/DL/Liferay+Digital+Enterprise+FastPack). 
 
