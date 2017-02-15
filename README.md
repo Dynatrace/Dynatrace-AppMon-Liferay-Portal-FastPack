@@ -1,8 +1,8 @@
-## Dynatrace-Liferay-Portal-FastPack for Liferay 7 and Dynatrace 6.1 - 6.3
+## Dynatrace-Liferay-Portal-FastPack for Liferay 7 and Dynatrace 6.1 - 6.5
 
 ![images_community/download/attachments/186522364/icon.png](images_community/download/attachments/186522364/icon.png)
 
-This branch of the dynaTrace FastPack for Liferay Portal is for Liferay DXP 7 for use Dynatrace 6.1 - 6.3.  There is a separate branch/fastpack for Liferay DXP 7 on Dynatrace 6.5.
+This branch of the dynaTrace FastPack for Liferay Portal is for Liferay DXP 7 for use Dynatrace 6.1 - 6.5.  Please note, however, that the fastpack has not been tested on AppMon 6.5. There are no features in the fastpack, though, that have been deprecated in 6.5.
 
 For Liferay 6.2, please see the Liferay 6.2ee branch and fastpack release 1. 
 
